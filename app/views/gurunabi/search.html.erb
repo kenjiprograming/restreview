@@ -1,0 +1,21 @@
+<div class="search">
+  <div class="search-form">
+    <%= form_with url: "/gurunabi/search", method: :get, local: true do |f| %>
+      <%= f.text_field :name, :placeholder => "お店の名前を入れてください" %>
+      <%= f.submit "検索" %>
+    <% end %>
+  </div>
+
+  <div class="search-hits">
+    <% @restaurants.each do |rest| %>
+      <div class="hit">
+        <div>
+          <%= link_to rest.name, "/gurunabi/#{rest.id}/show"%>
+        </div>
+        <div>
+          <%= rest.address %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

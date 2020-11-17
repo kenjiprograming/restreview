@@ -1,0 +1,18 @@
+<div class="search-show">
+  <div class="card">
+    <div class="card-content">
+      <div class="card-link">
+        <%=link_to @rest.name, @rest.url %>
+      </div>
+      <div class="card-text">
+        <%= @rest.address %>
+      </div>
+    </div>
+  </div>
+  <div class="search-show-form">
+    <%= form_with url: "/gurunabi/#{@rest.id}/create", local: true do |f|  %>
+      <%= f.text_area :caption, :placeholder => "キャプション" %>
+      <%= f.submit "投稿する" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<% if current_user != @user %>
+  <% if current_user.relationships.find_by(follow_id: params[:id]) %>
+    <%= link_to 'unfollow', "/relationships/#{@user.id}", method: :delete, class: "btn btn-primary" %>
+  <% else %>
+    <%= link_to 'follow', "/relationships/#{@user.id}", method: :post, class: "btn btn-primary" %>
+  <% end %>
+<% end %>

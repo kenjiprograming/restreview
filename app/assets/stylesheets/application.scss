@@ -1,0 +1,178 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ nav {
+   li {
+    margin-right: 20px;
+    list-style: none;
+   }
+ }
+
+  .container {
+    .card {
+      width: 350px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px #ccc;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      .card-content {
+        padding: 20px;
+        .card-title {
+          font-size: 20px;
+          margin-bottom: 20px;
+          text-align: left;
+          color: #333;
+        }
+        .card-text {
+          color: #777;
+          font-size: 14px;
+          line-height: 1.5;
+          text-align: left;
+        }
+        .card-link {
+          text-align: left;
+          border-top: 1px solid #eee;
+          padding: 20px;
+          padding-left: 0;
+          a {
+            text-decoration: none;
+            color: #0bd;
+            margin: 0 10px;
+            text-align: left;
+            &hover {
+              color: #0090aa;
+            }
+          }
+        }
+      }
+    }
+    .user-show {
+      h3 {
+        color: #333;
+      }
+      .follow-follower {
+        margin-bottom: 10px;
+        .follow {
+          margin: 5px;
+        }
+      }
+      .card {
+        width: 350px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px #ccc;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        .card-content {
+          padding: 20px;
+          text-align: left;
+          .card-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #333;
+          }
+          .card-text {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: left;
+          }
+        }
+      }
+    }
+    .followings, .followers {
+      h3 {
+        color: #333;
+      }
+      .card {
+        width: 350px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px #ccc;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        .card-content {
+          padding: 20px;
+          .card-link {
+            text-align: left;
+            border-top: 1px solid #eee;
+            padding: 20px;
+            padding-left: 0px;
+          }
+        }
+      }
+    }
+    .follow-unfollow-btn {
+      .btn {
+        padding: 3px 6px;
+        margin: 5px;
+      }
+    }
+      
+    .search {
+      .search-form {
+        input[type=text] {
+          width: 300px;
+          margin-bottom: 50px;
+        }
+        input[type=submit] {
+
+        }
+  
+      }
+      .search-hits {
+        .hit {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .search-show {
+      .card {
+        width: 350px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px #ccc;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        .card-content {
+          padding: 20px;
+          .card-link {
+            text-align: left;
+            padding: 20px;
+            border: none;
+            padding-left: 0;
+          }
+        }
+      }
+      .search-show-form {
+        textarea {
+          width: 275px;
+          height: 50px;
+          margin: auto;
+        }
+        input {
+          display: block;
+          margin: auto;
+        }
+      }
+
+    }
+  }
+

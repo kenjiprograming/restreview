@@ -1,0 +1,19 @@
+<h3>投稿一覧</h3>
+<% @posts.each do |post| %>
+  <section class="card">
+    <div class="card-content">
+      <p class="card-text"><%= link_to post.user.email, "/users/#{post.user_id}"%></p>
+      <h1 class="card-title"><%=link_to post.name, "/posteds/#{post.id}" %></h1>
+      <p class="card-text"><%= post.address %></p>
+      <p class="card-text"><%= post.caption %></p>
+      <p class="card-text">♡<%= post.likes.length %></p>
+      <div class="card-link">
+        <% if current_user.likes.find_by(posted_id: post.id) %>
+          <%= link_to 'いいね消す', "/posteds/#{post.id}/likes/destroy", method: :delete %>
+        <% else %>
+          <%= link_to 'いいねする', "/posteds/#{post.id}/likes/create", method: :post %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+<% end %>
