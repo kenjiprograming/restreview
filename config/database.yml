@@ -10,6 +10,9 @@ default: &default
 development:
   <<: *default
   database: myapp_development
+  host: db
+  socket: /tmp/mysql.sock
+
 
 test:
   <<: *default

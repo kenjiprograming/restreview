@@ -1,5 +1,14 @@
+<%= search_form_for @q, url: "/users/index" do |f| %>
+  <%= f.label :email, "emailを入力してください（最低1文字）" %>
+  <br>
+  <%= f.search_field :email_cont %>
+
+  <%= f.submit "検索" %>
+<% end %>
+
+
 <% @users.each do |user| %>
   <div>
-    <%= user.email %>
+    <%=link_to user.email, "/users/#{user.id}" %>
   </div>
 <% end %>
