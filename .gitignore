@@ -9,7 +9,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-/var/*
+/var/run/mysqld/mysqld.sock
 !/log/.keep
 !/tmp/.keep
 
