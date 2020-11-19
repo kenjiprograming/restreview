@@ -9,7 +9,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-
+/var/*
 !/log/.keep
 !/tmp/.keep
 
