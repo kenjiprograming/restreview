@@ -1,0 +1,214 @@
+@media screen and (max-width: 767px) {
+  
+  #wants-index {
+    a, button, .listname_submit {
+      color: gray;
+      text-decoration: none;
+      font-size: 13px;
+      outline: none;
+      &:hover {
+        color: black;
+      }
+    }
+
+    .card {
+      margin-bottom: 10px;
+    }
+    
+    .list_form {
+      // height: 50px;
+      .list_click, .list_click_consequence {
+        text-align: center !important;
+      }
+      
+      .list_btn {
+        width: 90%;
+        border: gray solid 1px;
+      }
+    }
+    .listname_form_box {
+      border-color: lightgray;
+      outline: none;
+
+      .listname_form {
+        width: 90% !important;
+        margin-right: 0px !important;
+      }
+
+      .listname_form_btn {
+        width: 40%;
+        border: gray 1px solid;
+        margin-top: 10px !important;
+      }
+    }
+
+    .name {
+      font-size: 13px;
+      font-weight: bold;
+      padding-left:0;
+      padding-right:0;
+    }
+    .address {
+      font-size: 12px;
+    }
+    .date {
+      color: gray;
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .listname {
+      font-size: 12px;
+      height: 20px;
+    }
+    .caption {
+      font-size: 13px;
+      height: 20px;
+    }
+    .detail, .togo, .tonogo, .delete {
+      font-size: 12px;
+    }
+
+    .detail_btn, .to_no_go_btn, .to_go_btn, .delete_btn {
+      width: 40%;
+      border: gray 1px solid;
+      margin-bottom: 15px;
+    }
+    
+  }
+  
+  #wants-show {
+    .card {
+      margin: 0 auto;
+      margin-bottom: 15px;
+      .card-content {
+        margin: auto;
+
+        .card-item {
+          margin: 20px 0;
+        }
+
+        .name {
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        .address {
+          font-size: 14px;
+        }
+
+        .date {
+          color: gray;
+          font-size: 11px;
+          font-weight: bold;
+        }
+
+        a {
+          color: gray;
+          text-decoration: none;
+          &:hover {
+            color: black;
+          }
+        }
+
+        .go_or_nogo, .top_page, .delete {
+          padding: 0;
+          margin: 0;
+          margin-bottom: 15px;
+
+          .top_btn, .go_btn, .no_go_btn, .delete_btn {
+            font-size: 12px;
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+  
+}
+  
+  
+  @media screen and (min-width: 768px) {
+  
+  #wants-index {
+    a, button, .listname_submit {
+      color: gray;
+      text-decoration: none;
+      font-size: 13px;
+      outline: none;
+      &:hover {
+        color: black;
+      }
+    }
+    
+    .list_form {
+      height: 50px;
+    }
+    .listname_search {
+      border-color: lightgray;
+      outline: none;
+    }
+    .name {
+      font-size: 13px;
+      font-weight: bold;
+      padding-left:0;
+      padding-right:0;
+    }
+    .address {
+      font-size: 12px;
+    }
+    .date {
+      color: gray;
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .listname {
+      font-size: 12px;
+      height: 20px;
+    }
+    .caption {
+      font-size: 13px;
+      height: 20px;
+    }
+    .detail, .togo, .tonogo, .delete {
+      font-size: 12px;
+    }
+    
+  }
+  
+  #wants-show {
+    .card {
+      margin: 0 auto;
+    }
+    .card-item {
+      margin: 20px 0;
+    }
+    .name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .address {
+      font-size: 14px;
+    }
+    a {
+      color: gray;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
+    }
+    .card-content {
+      margin: auto;
+    }
+    .go_or_nogo {
+      padding: 0;
+    }
+    .top, .go, .no_go, .delete {
+      font-size: 12px;
+    }
+    .date {
+      color: gray;
+      font-size: 11px;
+      font-weight: bold;
+    }
+  }
+}

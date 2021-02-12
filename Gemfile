@@ -41,6 +41,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-rails'
   gem 'pry-byebug'
+  #rspec用のgem 2つ追記
+  gem 'rspec-rails', '~> 4.0.1'
+  gem 'factory_bot_rails', '~>4.11'
+  gem 'html2slim'
 end
 
 group :development do
@@ -57,13 +61,18 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # gem 'chromedriver-helper'
+  gem 'webdrivers', '~> 4.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-
-gem 'bootstrap-sass'
 gem 'ransack'
+
+gem 'bootstrap', '~> 5.0.0.alpha3'
+gem 'jquery-rails'
+gem 'font-awesome-sass'
+
+gem 'slim-rails'

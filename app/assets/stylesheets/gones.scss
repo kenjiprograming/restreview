@@ -1,0 +1,234 @@
+@media screen and (max-width: 767px) {
+
+  #gones-index {
+    a {
+      color: gray;
+      text-decoration: none;
+      font-size: 13px;
+      &:hover {
+        color: black;
+      }
+    }
+    
+    .card {
+      margin-bottom: 15px;
+
+      .card-content {
+
+        
+        .name, .comment {
+          font-size: 13px;
+        }
+        
+        .address {
+          font-size: 12px;
+        }
+        
+        .image_big_box {
+          margin: 0 auto;
+          
+          .image_box {
+            height: 400px;
+            width: 100%;
+            
+            img {
+              height: inherit;
+              width: inherit;
+            }
+          }
+        }
+        
+        .date {
+          color: gray;
+          font-size: 11px;
+          font-weight: bold;
+        }
+        
+        .detail_btn, .delete_btn {
+          width: 40%;
+          border: gray 1px solid;
+          margin-bottom: 15px;
+          font-size: 13px;
+          color: gray;
+        }
+      }
+    }
+  }
+  
+
+  #gones-show {
+
+    
+    .info_big_box {
+      margin-bottom: 15px;
+
+      .info_box {
+        .big_image_box {
+          margin-bottom: 30px;
+
+          .image_box {
+            height: 400px;
+            width: 100%;
+            
+            img {
+              height: inherit;
+              width: inherit;
+            }
+          }
+        }
+
+        .name {
+          margin-bottom: 20px;
+          font-size: 16px;
+        }
+        
+        .address, .opentime, .holiday, .budget {
+          font-size: 12px;
+          margin-bottom: 5px;
+        }
+    
+        .comment_box {
+          font-size: 13px;
+          margin-bottom: 7px;
+          text-align: center !important;
+
+          span {
+            font-weight: bold;
+          }
+        }
+
+        .date {
+          color: gray;
+          font-size: 11px;
+          font-weight: bold;
+          margin-bottom: 20px !important;
+          text-align: center !important;
+        }
+
+        .go_top_btn, .delete_btn {
+          width: 40%;
+          border: gray 1px solid;
+          margin-bottom: 15px;
+          font-size: 13px;
+          color: gray;
+        }
+      }
+    }
+
+
+
+    .action_big_box {
+
+      .update_btn, .to_post_btn {
+          width: 40%;
+          border: gray 1px solid;
+          margin-bottom: 15px;
+          font-size: 13px;
+          color: gray;
+      }
+
+      .update_file, .to_post_file {
+        margin-bottom: 10px;
+        font-size: 12px;
+      }
+
+      .to_post_form, .update_form {
+        margin-bottom: 10px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+
+  #gones-index {
+    a {
+      color: gray;
+      text-decoration: none;
+      font-size: 13px;
+      &:hover {
+        color: black;
+      }
+    }
+    .name {
+      font-size: 13px;
+    }
+    .address {
+      font-size: 12px;
+    }
+    .detail, .delete {
+      font-size: 12px;
+    }
+    .image {
+      height: 100px;
+      max-height: 100px;
+      margin: 0 auto;
+    }
+    .comment {
+      font-size: 13px;
+    }
+    .image_box {
+      // margin: 0 auto;
+      min-width: 100px;
+    }
+    .date {
+    color: gray;
+    font-size: 11px;
+    font-weight: bold;
+    }
+  }
+  
+  #gones-show {
+    .gone_box {
+      margin: auto;
+    }
+    .name {
+      margin-bottom: 20px;
+    }
+    a {
+      color: gray;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
+    }
+    .address, .opentime, .holiday, .budget, .btn {
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .comment {
+      font-size: 13px;
+      margin-bottom: 7px;
+      span {
+        font-weight: bold;
+      }
+    }
+    .file {
+      font-size: 12px;
+    }
+    .btn {
+      color: gray;
+      text-decoration: none;
+      font-size: 13px;
+      &:hover {
+        color: black;
+      }
+    }
+    .date {
+      color: gray;
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .image_box {
+      min-width: 150px;
+      img {
+        height: 150px;
+        width: 150px;
+      }
+    }
+  }
+}

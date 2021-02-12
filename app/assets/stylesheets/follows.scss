@@ -1,0 +1,50 @@
+@media screen and (max-width: 767px) {
+  #follows-index {
+    .card-header {
+      margin-bottom: 20px;
+    }
+    a {
+      color: gray;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
+    }
+    .follow_box {
+      width: 100% !important;
+      margin-bottom: 20px !important;
+      height: 40px;
+  
+      .card-content {
+        margin: auto;
+      }
+  
+      .email_consequence {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+
+
+
+@media screen and (min-width: 768px) {
+  #follows-index {
+    .card-header {
+      margin-bottom: 20px;
+    }
+    a {
+      color: gray;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
+    }
+    .follow_box {
+      margin: 5px auto;
+    }
+  }
+}
+
+

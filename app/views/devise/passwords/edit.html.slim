@@ -1,0 +1,23 @@
+h3.mt-1.mb-3h3
+  | パスワードの変更
+.card.col-sm-5.mx-auto.mt-5
+  .card-body
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      = f.hidden_field :reset_password_token
+      .field
+        = f.label :password, "新しいパスワード", class: 'mb-2'
+        - if @minimum_password_length
+          em
+            | (
+            = @minimum_password_length
+            |  文字以上)
+          br
+        = f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'form-control mb-2'
+      .field
+        = f.label :password_confirmation, "新しいパスワード(確認用)"
+        br
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control mb-2'
+      .actions
+        = f.submit "変更", class: 'btn btn-light mb-3'
+    = render "devise/shared/links"

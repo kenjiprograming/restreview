@@ -1,3 +1,179 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@media screen and (max-width: 767px) {
+  
+  #user-show {
+    .info_big_box {
+      margin-bottom: 15px;
+    }
+    .info_name, .info_btn_box {
+      text-align: center !important;
+    }
+
+    .search_btn, .follows_btn, .follow-unfollow-btn {
+      width: 40%;
+      border: gray 1px solid;
+      margin-bottom: 15px;
+      font-size: 13px;
+      color: gray;
+    }
+
+
+    .follow-box {
+      margin: 0 auto;
+    }
+    a {
+      color: gray;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
+    }
+    .address, .btn {
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .caption {
+      font-size: 13px;
+      margin-bottom: 7px;
+      span {
+        // font-weight: bold;
+      }
+    }
+    .btn {
+      color: gray;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
+  
+  #user-index {
+    .search_form_box {
+      max-height: 200px;
+      min-height: 200px;
+      margin: 0;
+      margin-bottom: 15px;
+    }
+    .search_field {
+      width: 90%;
+      margin-bottom: 15px;
+    }
+    .search_submit_btn {
+      width: 40%;
+      border: gray 1px solid;
+      margin-bottom: 15px;
+      font-size: 13px;
+      color: gray;
+    }
+    .btn {
+      color: gray;
+      text-decoration: none;
+      font-size: 13px;
+      &:hover {
+        color: black;
+      }
+    }
+    a {
+      color: gray;
+      text-decoration: none;
+      font-size: 13px;
+      &:hover {
+        color: black;
+      }
+    }
+    .email_box {
+      margin: 0 auto;
+      width: 100% !important;
+      margin-bottom: 20px !important;
+      height: 40px;
+
+      .email_consequences {
+        margin: auto 0;
+        
+        .email {
+          font-size: 17px;
+        }
+      }
+    }
+    .user_search {
+      outline: none;
+    }
+  }
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 768px) {
+  
+  #user-show {
+    .follow-box {
+      margin: 0 auto;
+    }
+    a {
+      color: gray;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
+    }
+    .address, .btn {
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    .caption {
+      font-size: 13px;
+      margin-bottom: 7px;
+      span {
+        // font-weight: bold;
+      }
+    }
+    .btn {
+      color: gray;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
+    }
+  }
+  
+  #user-index {
+    .search_form_box {
+      max-height: 200px;
+      min-height: 200px;
+    }
+    .search_form {
+      margin: auto;
+    }
+    .btn {
+      color: gray;
+      text-decoration: none;
+      font-size: 13px;
+      &:hover {
+        color: black;
+      }
+    }
+    a {
+      color: gray;
+      text-decoration: none;
+      font-size: 13px;
+      &:hover {
+        color: black;
+      }
+    }
+    .email_box {
+      margin: 0 auto;
+    }
+    .user_search {
+      outline: none;
+    }
+  }
+}
+
+
+
+

@@ -21,8 +21,14 @@ services:
             - 3000:3000
         depends_on:
             - db 
+            - chrome # ←追加
         tty: true
         stdin_open: true
 
+    chrome:
+        image: selenium/standalone-chrome:latest
+        ports:
+            - 4444:4444
+
 volumes:
-  gem_data:
+    gem_data:

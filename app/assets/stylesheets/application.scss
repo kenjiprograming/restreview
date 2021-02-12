@@ -10,169 +10,130 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
 
- nav {
-   li {
-    margin-right: 20px;
-    list-style: none;
-   }
- }
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
-  .container {
-    .card {
-      width: 350px;
-      background: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px #ccc;
-      margin: 0 auto;
-      margin-bottom: 10px;
-      .card-content {
-        padding: 20px;
-        .card-title {
-          font-size: 20px;
-          margin-bottom: 20px;
-          text-align: left;
-          color: #333;
-        }
-        .card-text {
-          color: #777;
-          font-size: 14px;
-          line-height: 1.5;
-          text-align: left;
-        }
-        .card-link {
-          text-align: left;
-          border-top: 1px solid #eee;
-          padding: 20px;
-          padding-left: 0;
-          a {
-            text-decoration: none;
-            color: #0bd;
-            margin: 0 10px;
-            text-align: left;
-            &hover {
-              color: #0090aa;
-            }
-          }
-        }
-      }
-    }
-    .user-show {
-      h3 {
-        color: #333;
-      }
-      .follow-follower {
-        margin-bottom: 10px;
-        .follow {
-          margin: 5px;
-        }
-      }
-      .card {
-        width: 350px;
-        background: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px #ccc;
-        margin: 0 auto;
-        margin-bottom: 10px;
-        .card-content {
-          padding: 20px;
-          text-align: left;
-          .card-title {
-            font-size: 20px;
-            margin-bottom: 20px;
-            text-align: left;
-            color: #333;
-          }
-          .card-text {
-            color: #777;
-            font-size: 14px;
-            line-height: 1.5;
-            text-align: left;
-          }
-        }
-      }
-    }
-    .followings, .followers {
-      h3 {
-        color: #333;
-      }
-      .card {
-        width: 350px;
-        background: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px #ccc;
-        margin: 0 auto;
-        margin-bottom: 10px;
-        .card-content {
-          padding: 20px;
-          .card-link {
-            text-align: left;
-            border-top: 1px solid #eee;
-            padding: 20px;
-            padding-left: 0px;
-          }
-        }
-      }
-    }
-    .follow-unfollow-btn {
-      .btn {
-        padding: 3px 6px;
-        margin: 5px;
-      }
-    }
-      
-    .search {
-      .search-form {
-        input[type=text] {
-          width: 300px;
-          margin-bottom: 50px;
-        }
-        input[type=submit] {
 
-        }
-  
-      }
-      .search-hits {
-        .hit {
-          margin-bottom: 10px;
-        }
+
+@media screen and (max-width: 767px) {
+
+  nav {
+    .logo {
+      font-size: 16px;
+
+      .logo_sub {
+        font-size: 9px;
+
       }
     }
-    .search-show {
-      .card {
-        width: 350px;
-        background: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px #ccc;
-        margin: 0 auto;
-        margin-bottom: 10px;
-        .card-content {
-          padding: 20px;
-          .card-link {
-            text-align: left;
-            padding: 20px;
-            border: none;
-            padding-left: 0;
-          }
-        }
+    .nav-item {
+      margin: auto;
+
+    }
+    .navbar-brand {
+      color: gray;
+      text-decoration: none;
+      &:hover {
+        color: black;
       }
-      .search-show-form {
-        textarea {
-          width: 275px;
-          height: 50px;
-          margin: auto;
-        }
-        input {
-          display: block;
-          margin: auto;
-        }
+    }
+  }
+
+  #sessions-new, #registrations-new, #passwords-new, #confirmations-new, #registrations-create, #confirmations-create, #passwords-edit {
+    font-size: 14px;
+
+    .btn {
+      color: gray;
+      text-decoration: none;
+      width: 40%;
+      font-size: 15px;
+      border: 1px solid gray;
+
+      &:hover {
+        color: black;
       }
+    }
+    .field {
+    margin-bottom: 15px;
+    }
+    .actions {
+      margin-bottom: 15px;
+    }
+    
+    .error_title {
+      font-size: 15px;
+      color: red;
+
+    }
+    .error_message {
+      list-style: none;
+      font-size: 15px;
+      color: red;
+
+    }
+    .devise_btn {
+      font-size: 15px;
+      text-decoration: none;
+      display: block;
+      width: 90%;
+      background: #f8f9fa;
+      margin: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  a {
+    color: gray;
+    text-decoration: none;
+    font-size: 13px;
+
+    &:hover {
+      color: black;
 
     }
   }
+
+  nav {
+    .logo {
+      font-size: 16px;
+
+      .logo_sub {
+        font-size: 9px;
+
+      }
+    }
+    .nav-item {
+      margin: auto;
+
+    }
+  }
+
+  #sessions-new, #registrations-new, #passwords-new, #confirmations-new, #registrations-create, #confirmations-create, #passwords-edit {
+    font-size: 14px;
+    .btn {
+      color: gray;
+      text-decoration: none;
+      font-size: 14px;
+      &:hover {
+        color: black;
+      }
+    }
+    .error_title {
+      font-size: 15px;
+      color: red;
+    }
+    .error_message {
+      list-style: none;
+      font-size: 15px;
+      color: red;
+    }
+  }
+}
 

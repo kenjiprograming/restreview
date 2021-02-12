@@ -1,39 +1,12 @@
 class GurunabiController < ApplicationController
-
-  def hoge
-    hairetu = {
-      keyid: "8ad6930f6b2218d7e5a2c9447bef848e",
-      hit_per_page: 100,
-      name: params[:name]
-    }
-
-    require 'net/http'
-    require 'uri'
-    require 'json'
-
-    params = URI.encode_www_form(hairetu)
-    uri = URI.parse("https://api.gnavi.co.jp/RestSearchAPI/v3?#{params}")
-    response = Net::HTTP.get_response(uri)
-    result = JSON.parse(response.body)
-    
-    @num = 0
-    @long = result["rest"].length
-    @restaurants = {}
-
-    while @num < @long do
-      @restaurants[@num] = result["rest"][@num]
-      @num += 1
-    end
-    @num = 0
-
-  end
-
+  before_action :authenticate_user!
+  
   def search
-
     hairetu = {
       keyid: "8ad6930f6b2218d7e5a2c9447bef848e",
-      hit_per_page: 100,
-      name: params[:name]
+      hit_per_page: 50,
+      name: params[:name],
+      freeword: params[:freeword]
     }
 
     require 'net/http'
@@ -45,44 +18,62 @@ class GurunabiController < ApplicationController
     json = Net::HTTP.get(uri) #NET::HTTPを利用してAPIを叩く
     result = JSON.parse(json) #返ってきたjsonデータをrubyの配列に変換
 
-    unless result["rest"]
-      redirect_to gurunabi_search_path
-      return
+    # unless result["rest"]
+    #   render :search
+    #   # return
+    #   # binding.pry
+    # end
+    # binding.pry
+    unless result["error"].present?
       # binding.pry
-    end
-    
-    long = result["rest"].length
-    num = 0
-
-    while num < long do
-      rest_name = result["rest"][num]["name"]
-      rest_address = result["rest"][num]["address"]
-      rest_url = result["rest"][num]["url"]
-      rest = Rest.new(name: rest_name, address: rest_address, url: rest_url)
-      unless Rest.find_by(name: rest.name).present?
-        rest.save
+      long = result["rest"].length
+      num = 0
+      while num < long do
+        rest_name = result["rest"][num]["name"]
+        rest_address = result["rest"][num]["address"]
+        rest_tel = result["rest"][num]["tel"]
+        rest_opentime = result["rest"][num]["opentime"]
+        rest_holiday = result["rest"][num]["holiday"]
+        rest_budget = result["rest"][num]["budget"]
+        rest_url = result["rest"][num]["url"]
+        rest = Rest.new(name: rest_name, address: rest_address, tel: rest_tel, opentime: rest_opentime, holiday: rest_holiday, budget: rest_budget, url: rest_url)
+        # binding.pry
+        unless Rest.find_by(name: rest.name)
+          rest.save
+        end
+        num += 1
       end
-      num += 1
+  
+      num = 0
+      
+      # binding.pry
+      if hairetu[:name] && hairetu[:freeword]
+        @restaurants = Rest.where("name LIKE ?", "%#{ hairetu[:name] }%").where("address LIKE ?", "%#{ hairetu[:freeword] }%")
+        flash[:notice] = "検索結果が#{@restaurants.length}件ありました。"
+      end
+      
+    else
+      @restaurant = Rest.new
+      flash[:alert] = "検索結果がありませんでした。"
+      redirect_to gurunabi_search_path
     end
-
-    num = 0
-    @restaurants = Rest.where("name LIKE ?", "%#{hairetu[:name]}%")
   end
+
 
   def show
     @rest = Rest.find(params[:id])
-    @posted = Posted.new
+    @want = Want.new
+    # binding.pry
   end
-
-  def create
-    rest = Rest.find(params[:id])
-    # @posted = Posted.new(name: rest.name, address: rest.address, url: rest.url)
-    @posted = current_user.posteds.new(name: rest.name, address: rest.address, url: rest.url, caption: params[:caption])
-    if @posted.save
-      redirect_to root_path
-    else
-      render :show
-    end
-  end
-
 end
+
+
+# if hairetu[:freeword]
+#   str = hairetu[:freeword].split(/[[:blank:]]/)
+#   @restaurants = Rest.where("name LIKE ?", "%#{str[0]}%" "%#{str[1]}%").or(Rest.where("name LIKE ?", "%#{str[1]}%" "%#{str[0]}%"))
+#   flash[:notice] = "検索結果が#{@restaurants.length}件ありました。"
+#   # return
+# else
+#   flash[:alert] = "検索結果がありませんでした。"
+#   @restaurant = Rest.new
+# end

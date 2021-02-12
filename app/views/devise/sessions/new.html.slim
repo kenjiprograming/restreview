@@ -1,0 +1,23 @@
+h3.mt-1.mb-3
+  | ログイン
+.card.col-sm-5.mx-auto.mt-5
+  .card-body
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-group
+        = f.label :email, class: "mb-2"
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control mb-2'
+      .form-group
+        = f.label :password, class: "mb-2"
+        = f.password_field :password, autocomplete: "current-password", class: 'form-control mb-2'
+      - if devise_mapping.rememberable?
+        .field[style="margin-bottom: 10px;"]
+          = f.check_box :remember_me
+          = f.label :remember_me, class: 'remember'
+      .actions[style="margin-bottom: 10px;"]
+      = f.submit "ログイン", class: 'btn btn-light  mb-3'
+    = render "devise/shared/links"
+
+
+
+ 
+

@@ -1,0 +1,33 @@
+h3
+  | お店詳細
+.row
+  .col-lg-6.col-xs-12.text-center.card.search_show.p-3
+    .card-header.p-0
+      | restaurant info
+    .card-content.rest_box
+      .card-item.name
+        =link_to @rest.name, @rest.url, class: 'rest-link fw-bold'
+      .address.card-item
+        = @rest.address
+      .opentime.card-item
+        | opentime: 
+        = @rest.opentime
+      .holiday.card-item
+        | holiday: 
+        = @rest.holiday
+      .budget.card-item
+        | 予算: ¥
+        = @rest.budget
+
+  .col-lg-6.col-xs-12.text-center.card.p-3
+    .card-header.p-0.mb-2
+      | 行きたいお店リストに登録できます
+    .card-content
+      .search_show_form
+        = form_with model: @want, local: true do |f|
+          = f.hidden_field :rest_id, value: @rest.id
+          .form-group.mb-2
+            = f.text_area :caption, :placeholder => "キャプション", class: 'want_caption form-control caption', id: 'want_caption'
+          .form-group.text-left.mb-2
+            = f.text_field :listname, :placeholder => "リストネーム（例: 渋谷カフェ、新宿ディナー)", class: 'list-name form-control', id: 'list-name'
+          = f.submit "行きたいお店リストに追加する", class: 'btn btn-light submit'

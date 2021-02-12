@@ -1,0 +1,24 @@
+h3.mb-5
+  | ユーザー検索画面
+.row
+  .card.col-lg-6.col-12.p-3.text-center.search_form_box
+    .card-header.p-0.mb-2
+      | ユーザー検索をしてください
+    .card-content.search_form_box
+      = search_form_for @q, url: user_index_path do |f|
+        .form-group.mb-2
+          = f.label :email, "emailを入力してください（最低1文字）", class: 'label mb-2'
+          br
+          = f.search_field :email_cont, id: "form_controll", class: 'form-control-sm mr-2 search_field'
+          = f.submit "検索", id: "submit", class: 'search_submit_btn btn btn-light ml-2'
+
+  .card.col-lg-6.col-12.p-3.text-center
+    .card-header.p-0.mb-2
+      | 検索結果が表示されます
+    .card-content
+      - if params[:q]
+        - @users.each do |user|
+          .card.mb-1.w-75.email_box
+            #user.card-content.email_consequences
+              = link_to user.email, user_path(user), class: 'email'
+

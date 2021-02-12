@@ -1,26 +1,31 @@
 Rails.application.routes.draw do
-  post 'posteds/:id/likes/create', to: 'likes#create'
-  delete '/posteds/:id/likes/destroy', to: 'likes#destroy'
+  # wantsのルーティング
+  resources :wants
+  # gonesのルーティング
+  resources :gones
+  
+  # postedsのルーティング
+  resources :posteds do
+    # likesのルーティング
+    resources :likes, only: [:create, :destroy]
+  end
 
-  get 'posteds/:id', to: 'posteds#show'
-  delete 'posteds/:id', to: 'posteds#destroy'
-
-  get 'followers/:id/index', to: "followers#index"
-  get 'followings/:id/index', to: "followings#index"
-
+  #relationsのルーティング
   post 'relationships/:id', to: 'relationships#create'
   delete'relationships/:id', to: 'relationships#destroy'
-
+  
+  #deviseのルーティング
   devise_for :users
 
-  get 'users/index', to: 'users#index'
-  get 'users/:id', to: 'users#show'
-
-  post 'gurunabi/:id/create', to: 'gurunabi#create'
+  #userのルーティング
+  resources :user do
+    #followsのルーティング
+    resources :follows, only: [:index]
+  end
+  
+  #gurunabiのルーティング
   get 'gurunabi/:id/show', to: 'gurunabi#show'
   get 'gurunabi/search', to: 'gurunabi#search'
-  get 'gurunabi/hoge', to: 'gurunabi#hoge'
-  get 'search', to: 'search#search'
 
-  root 'home#index'
+  root 'posteds#index'
 end

@@ -1,0 +1,48 @@
+doctype html
+html
+  head
+    title
+      | RestReview
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body id="#{controller.controller_name}-#{controller.action_name}"
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      = link_to root_path, class: 'nav-link logo navbar-brand' do 
+        | RestReview
+        span.logo_sub
+        |  〜あのお店を忘れない〜
+
+      button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        span.navbar-toggler-icon
+
+      div#navbarSupportedContent.collapse.navbar-collapse.justify-content-end
+        ul.navbar-nav.mr-auto
+          - if current_user
+            li.nav-item.active
+              = link_to "お店を検索する", gurunabi_search_path, class: "nav-link"
+            li.nav-item
+              = link_to "行きたいお店", wants_path, class: "nav-link"
+            li.nav-item
+              = link_to "行ったお店", gones_path, class: "nav-link"
+        ul.navbar-nav
+          - if current_user
+            li.nav-item
+              = link_to current_user.email, user_path(current_user), class: "nav-link", id: 'mypage'
+            li.nav-item
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"
+          - else
+            li.nav-item
+              = link_to "新規登録", new_user_registration_path, class: "nav-link"
+            li.nav-item
+              = link_to "ログイン", new_user_session_path, class: "nav-link"
+
+    div.container.text-center.mt-4
+      - if notice
+        p.text-info
+          = notice
+      - if alert
+        p.text-danger
+          = alert
+      = yield

@@ -1,5 +1,5 @@
 class RelationshipsController < ApplicationController
-
+  before_action :authenticate_user!
   
 
   def create
@@ -7,10 +7,7 @@ class RelationshipsController < ApplicationController
     # binding.pry
     if relationship.save
       flash[:success] = 'ユーザーをフォローしました'
-      redirect_to "/users/#{params[:id]}"
-    else
-      flash.now[:alert] = 'ユーザーのフォローに失敗しました'
-      redirect_to "/users/#{params[:id]}"
+      redirect_to user_path(params[:id])
     end
   end
 
@@ -18,10 +15,7 @@ class RelationshipsController < ApplicationController
     relationship = current_user.relationships.find_by(follow_id: params[:id])
     if relationship.destroy
       flash[:success] = 'ユーザーのフォローを解除しました'
-      redirect_to "/users/#{params[:id]}"
-    else
-      flash.now[:alert] = 'ユーザーのフォロー解除に失敗しました'
-      redirect_to "/users/#{params[:id]}"
+      redirect_to user_path(params[:id])
     end
   end
 
