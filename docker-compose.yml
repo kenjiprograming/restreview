@@ -48,7 +48,7 @@ services:
         depends_on:
             # - db 
             - app
-            - chrome # ←追加
+            # - chrome # ←追加
         tty: true
         stdin_open: true
 
