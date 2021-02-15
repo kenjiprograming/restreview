@@ -76,3 +76,5 @@ gem 'jquery-rails'
 gem 'font-awesome-sass'
 
 gem 'slim-rails'
+
+gem 'dotenv-rails'
