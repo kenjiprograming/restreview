@@ -3,7 +3,7 @@ class GurunabiController < ApplicationController
   
   def search
     hairetu = {
-      keyid: "8ad6930f6b2218d7e5a2c9447bef848e",
+      keyid: "7aafccaea5381a783d161654c70a5969",
       hit_per_page: 50,
       name: params[:name],
       freeword: params[:freeword]
@@ -14,7 +14,7 @@ class GurunabiController < ApplicationController
     require 'json'
 
     params = URI.encode_www_form(hairetu)
-    uri = URI.parse("https://api.gnavi.co.jp/RestSearchAPI/v3?#{params}")
+    uri = URI.parse("https://api.gnavi.co.jp/RestSearchAPI/v3/?#{params}")
     json = Net::HTTP.get(uri) #NET::HTTPを利用してAPIを叩く
     result = JSON.parse(json) #返ってきたjsonデータをrubyの配列に変換
 
@@ -31,12 +31,12 @@ class GurunabiController < ApplicationController
       while num < long do
         rest_name = result["rest"][num]["name"]
         rest_address = result["rest"][num]["address"]
+        rest_url = result["rest"][num]["url"]
         rest_tel = result["rest"][num]["tel"]
         rest_opentime = result["rest"][num]["opentime"]
         rest_holiday = result["rest"][num]["holiday"]
         rest_budget = result["rest"][num]["budget"]
-        rest_url = result["rest"][num]["url"]
-        rest = Rest.new(name: rest_name, address: rest_address, tel: rest_tel, opentime: rest_opentime, holiday: rest_holiday, budget: rest_budget, url: rest_url)
+        rest = Rest.new(name: rest_name, address: rest_address, url: rest_url, tel: rest_tel, opentime: rest_opentime, holiday: rest_holiday, budget: rest_budget)
         # binding.pry
         unless Rest.find_by(name: rest.name)
           rest.save

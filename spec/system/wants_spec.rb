@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'wants機能', type: :system do
   before do
     visit new_user_session_path
-    fill_in 'Eメール', with: 'test1@test.com'
-    fill_in 'パスワード', with: 'password'
+    fill_in 'Eメール', with: 'iamkenji2231@gmail.com'
+    fill_in 'パスワード', with: '2231Ke52'
     click_button 'ログイン'
     click_on 'お店を検索する'
     fill_in 'text_field', with: 'スターバックス 新宿'

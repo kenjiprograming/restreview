@@ -4,21 +4,23 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: password
-  host: localhost
-  socket: /tmp/mysql.sock
+  host: db
+  # socket: /tmp/mysql.sock
 
 development:
   <<: *default
-  database: myapp_development
-  host: db
-  socket: /tmp/mysql.sock
+  database: restreview_development
+  # database: myapp_development
+  # host: db
+  # socket: /tmp/mysql.sock
 
 
 test:
   <<: *default
-  database: myapp_test
-  host: db
-  socket: /tmp/mysql.sock
+  database: restreview_test
+  # database: myapp_test
+  # host: db
+  # socket: /tmp/mysql.sock
 
 production:
   <<: *default

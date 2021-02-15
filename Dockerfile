@@ -1,11 +1,14 @@
 FROM ruby:2.5
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
-RUN mkdir /myapp
-WORKDIR /myapp
+RUN mkdir /restreview
+WORKDIR /restreview
 
-COPY Gemfile /myapp/Gemfile
-COPY Gemfile.lock /myapp/Gemfile.lock
+COPY Gemfile /restreview/Gemfile
+COPY Gemfile.lock /restreview/Gemfile.lock
 
+RUN gem install bundler
 RUN bundle install
-COPY . /myapp
+
+# COPY . /restreview
+RUN mkdir -p tmp/sockets

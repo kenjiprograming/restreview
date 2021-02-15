@@ -1,26 +1,52 @@
 version: '3'
 
 services:
+    app:
+        build:
+            context: .
+        command: bundle exec puma -C config/puma.rb
+        volumes:
+            - .:/restreview
+            - public-data:/restreview/public
+            - tmp-data:/restreview/tmp
+            - log-data:/restreview/log
+            # - gem_data:/usr/local/bundle
+        depends_on:
+        - db
+
     db:
         image: mysql:5.7
+        command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
         environment:
-            MYSQL_USER: root
             MYSQL_ROOT_PASSWORD: password
+            MYSQL_USER: root
+            # MYSQL_ROOT_PASSWORD: password
+            # MYSQL_USER: user
+            MYSQL_PASSWORD: password
+            MYSQL_DATABASE: restreview_development
         ports:
             - "3306:3306"
+        # volumes:
+        #     - ./db/mysql/volumes:/var/lib/mysql
         volumes:
-            - ./db/mysql/volumes:/var/lib/mysql
+        - db-data:/var/lib/mysql
 
     web:
-        build: .
-        command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+        # build: .
+        # command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+        build:
+            context: ./nginx_docker
         volumes:
-            - .:/myapp
-            - gem_data:/usr/local/bundle
+            # - .:/myapp
+            # - gem_data:/usr/local/bundle
+            - public-data:/restreview/public
+            - tmp-data:/restreview/tmp
         ports:
-            - 3000:3000
+            # - 3000:3000
+            - 80:80
         depends_on:
-            - db 
+            # - db 
+            - app
             - chrome # ←追加
         tty: true
         stdin_open: true
@@ -30,5 +56,11 @@ services:
         ports:
             - 4444:4444
 
+# volumes:
+#     gem_data:
+
 volumes:
-    gem_data:
+  public-data:
+  tmp-data:
+  log-data:
+  db-data:
