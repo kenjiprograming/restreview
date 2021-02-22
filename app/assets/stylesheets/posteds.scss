@@ -1,84 +1,258 @@
-#posteds-index {
-  .posted-box {
-    // margin-left: auto;
-    // margin-right: auto;
-  }
-  .card-text {
-    color: grey;
-  }
-  .card-title {
-    margin: 0;
-  }
-  .date, .like, .heart {
-    font-size: 12px;
-  }
-  .unlike{
-    color: #ff004c;
-  }
-  .image {
-    width: 100%;
-    height: 400px;
-  }
-  .caption {
-    font-size: 12px;
-    span {
-      font-weight: bold;
+@media screen and (max-width: 600px) {
+  #posteds-index {
+    .posted-box {
+      // margin-left: auto;
+      // margin-right: auto;
+    }
+    .card-text {
+      color: grey;
+    }
+    .card-title {
+      margin: 0;
+    }
+    .date, .like, .heart {
+      font-size: 12px;
+    }
+    .unlike{
+      color: #ff004c;
+    }
+    .image {
+      width: 100%;
+      height: 400px;
+    }
+    .caption {
+      font-size: 12px;
+      span {
+        font-weight: bold;
+      }
+    }
+  a {
+      color: gray;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
     }
   }
- a {
-    color: gray;
-    text-decoration: none;
-    &:hover {
-      color: black;
+
+  #posteds-show {
+  a {
+      color: gray;
+      text-decoration: none;
+      &:hover {
+        color: black;
+      }
+    }
+    .card {
+      margin: 5px;
+    }
+    .card-content {
+      padding: 40px;
+    }
+    .card-text {
+      font-size: 14px;
+      color: grey;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .post_name {
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .caption {
+      margin-bottom: 80px;
+      span {
+        font-weight: bold;
+      }
+    }
+    .unlike{
+      color: #ff004c;
+    }
+    .delete {
+      color: gray;
+      &:hover {
+        color: black;
+      }
+    }
+    .be-liked {
+      margin: 10px 0;
+    }
+    .image {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
     }
   }
 }
 
-#posteds-show {
- a {
-    color: gray;
-    text-decoration: none;
-    &:hover {
-      color: black;
+// スマホ用レイアウト
+@media screen and (min-width: 599px) {
+  // 投稿一覧
+  #posteds-index {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .card-header {
+      .email {
+        font-size: 1.3rem !important;
+      }
+    }
+    .card-body {
+      .title-field {
+        margin-bottom: 2rem !important;
+        .title {
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+      }
+      .caption-field {
+        margin-bottom: 2rem;
+        span {
+          font-size: 1rem;
+          color: gray;
+          margin-right: 5px;
+        }
+        p {
+          display: inline-block;
+        }
+      }
+      .heart-field {
+        margin-bottom: 2rem;
+        p {
+          display: inline-block;
+        }
+        .heart {
+          margin-right: 5px;
+        }
+      }
+      .row-field {
+        margin-bottom: 2rem;
+        .left-space {
+          .unlike-btn {
+
+          }
+          .like-btn {
+
+          }
+        }
+        .right-space {
+          color: gray;
+          font-size: 1rem;
+        }
+      }
     }
   }
-  .card {
-    margin: 5px;
-  }
-  .card-content {
-    padding: 40px;
-  }
-  .card-text {
-    font-size: 14px;
-    color: grey;
-    text-align: left;
-    margin-bottom: 20px;
-  }
-  .post_name {
-    font-size: 16px;
-    text-decoration: none;
-  }
-  .caption {
-    margin-bottom: 80px;
-    span {
-      font-weight: bold;
+  // 投稿詳細
+  #posteds-show {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
-  }
-  .unlike{
-    color: #ff004c;
-  }
-  .delete {
-    color: gray;
-    &:hover {
-      color: black;
+    p {
+      margin: 0;
     }
+    .image-field {
+      .image-sapce {
+        .image {
+
+        }
+      }
+    }
+    .email-space {
+      margin-bottom: 1rem;
+      .email {
+        font-size: 1rem;
+        // margin-top: 1rem;
+      }
+    }
+    .name-space {
+      margin-bottom: 1rem;
+      .name {
+        font-size: 1.5rem !important;
+      }
+    }
+    .address-space {
+      margin-bottom: 1rem;
+      .address {
+        font-size: 1rem;
+      }
+    }
+    .caption-space {
+      margin-bottom: 1rem;
+      padding-left: 12px;
+        p {
+          display: inline-block;
+          font-size: 1rem;
+        }
+        .email {
+          color: gray;
+          font-weight: bold;
+          margin-right: 5px;
+        }
+        .caption {
+
+        }
+    }
+
+    .action-field {
+      margin: 0;
+      .like-space {
+        margin-bottom: 1rem;
+        .unlike-btn {
+
+        }
+        .like-btn {
+
+        }
+      }
+      .heart-space {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        p {
+          display: inline-block;
+        }
+        .heart {
+          margin-right: 5px;
+        }
+        .length {
+
+        }
+      }
+      .date-space {
+        margin-bottom: 2rem;
+        .date {
+          font-size: 1rem;
+          color: gray;
+        }
+      }
+      .delete-space {
+        margin-bottom: 2rem;
+        .delete-btn {
+          width: 200px;
+          font-size: 1.2rem;
+          margin: 0 !important;
+        }
+      }
+      .beliked-space {
+        margin-bottom: 1rem;
+        .title {
+          font-size: 1.3rem;
+          border-top: 1px solid #dee2e6 !important;
+          margin-bottom: 1rem;
+        }
+        .beliked-space-inner {
+          .inner-inner {
+            text-align: center !important;
+            margin-bottom: 1.8rem;
+            .email-btn {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+
   }
-  .be-liked {
-    margin: 10px 0;
-  }
-  .image {
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
-  }
+
 }

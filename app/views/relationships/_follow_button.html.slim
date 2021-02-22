@@ -1,6 +1,6 @@
 - if current_user != @user
   - if current_user.relationships.find_by(follow_id: params[:id])
-    = link_to 'フォロー中', "/relationships/#{@user.id}", method: :delete, class: "btn btn-dark text-light m-1"
+    = link_to 'フォロー中', "/relationships/#{@user.id}", method: :delete, class: "btn btn-dark text-light m-1 unfollow-btn"
   - else
-    = link_to 'フォローする', "/relationships/#{@user.id}", method: :post, class: "btn btn-light m-1"
+    = link_to 'フォローする', "/relationships/#{@user.id}", method: :post, class: "btn btn-light m-1 follow-btn"
 

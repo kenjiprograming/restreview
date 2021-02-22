@@ -1,80 +1,91 @@
 h3.mb-3
-  | ユーザー詳細画面
-.follow-follower.row.p-1.info_big_box
-  div.col-lg-4.col-12.p-0.text-left.pl-2.info_name
-    h3.user_email
-      = @user.email
-  div.col-lg-8.col-12.p-0.follow-box.text-right.pr-2.info_btn_box
-    = link_to 'ユーザー検索', user_index_path, class: "search_btn btn btn-light m-1"
-    = link_to 'フォロー/フォロワー', user_follows_path(@user), class: "follow btn btn-light m-1 follows_btn"
-    = render "relationships/follow_button", class: 'follow-unfollow-btn'
+  p ユーザー詳細
+div.row.p-1.info_big_box.follow-follower.follows-field
+  div.col-lg-4.col-5.p-0.text-left.pl-2.info_name.email-space
+    div.user_email.email
+      p = @user.email
 
-.row.justify-content-left
-  div.col-lg-3.col-12.p-0.text-center
+  div.col-lg-8.col-7.p-0.follow-box.text-right.pr-2.info_btn_box.action-space
+    = link_to 'ユーザー検索', user_index_path, class: "search_btn btn btn-light m-1 search-btn"
+
+    = link_to 'フォロー/フォロワー', user_follows_path(@user), class: "follow btn btn-light m-1 follows_btn follows-btn"
+    
+    = render "relationships/follow_button", class: 'follow-unfollow-btn action-space-inner'
+
+div.row.justify-content-left.inform-area
+  div.col-lg-3.col-12.p-0.text-center.want-field
     div.card.mb-2.p-1
-      div.card-header.text.fw-bold
-        | 行きたいお店
+      div.card-header.text.fw-bold.title-space
+        p.title 行きたいお店
+
       - @wants.each do |want|
-        div.card.m-1
+        div.card.m-1.field-inner
           div.card-content
-            div.card-title.name.mb-0
-              = link_to want.name, want_path(want.id), class: 'want_post'
-            div.card-text.address
-              = want.address
-            div.card-text.caption.text-left.p-1
-              | caption: 
-              span
-                = want.caption
+            div.card-title.name.mb-0.name-space
+              = link_to want.name, want_path(want.id), class: 'want_post name'
 
-  div.col-lg-3.col--12.p-0.text-center
+            div.card-text.address.address-space
+              p.address = want.address
+
+            div.card-text.caption.text-left.p-1.capcom-space
+              p.ttl caption: 
+              p.capcom = want.caption
+
+  div.col-lg-3.col--12.p-0.text-center.gone-field
     div.card.mb-2.p-1
-      div.card-header.text.fw-bold
-        | 行ったお店
+      div.card-header.text.fw-bold.title-space
+        p.title 行ったお店
+
       - @gones.each do |gone|
-        div.card.m-1
+        div.card.m-1.field-inner
           div.card-content
-            div.card-title.name.mb-0
-              = link_to gone.name, gone_path(gone.id), class: 'gone_post'
-            div.card-text.address
-              = gone.address
-            div.card-text.caption.text-left.p-1
-              | comment: 
-              span
-                = gone.comment
+            div.card-title.name.mb-0.name-space
+              = link_to gone.name, gone_path(gone.id), class: 'gone_post name'
 
-  div.col-lg-3.col-12.p-0.text-center
+            div.card-text.address.address-space
+              p.address = gone.address
+
+            div.card-text.caption.text-left.p-1.capcom-space
+              p.ttl comment: 
+              p.capcom = gone.comment
+
+  div.col-lg-3.col-12.p-0.text-center.post-field
     div.card.mb-2.p-1
-      div.card-header.text.fw-bold
-        | 投稿
+      div.card-header.text.fw-bold.title-space
+        p.title 投稿
+
       - @user.posteds.each do |post|
-        div.card.m-1
+        div.card.m-1.field-inner
           div.card-content
-            div.card-item.name
-              = link_to post.name, posted_path(post)
-            div.card-itme.address
-              = post.address
-            div.card-text.caption.text-left.p-1
-              | caption: 
-              span
-                = post.caption
+            div.card-item.name.name-space
+              = link_to post.name, posted_path(post), class: 'name'
 
-  div.col-lg-3.col-12.p-0.text-center
+            div.card-itme.address.address-space
+              p.address = post.address
+
+            div.card-text.caption.text-left.p-1.capcom-space
+              p.ttl caption: 
+              p.capcom = post.caption
+
+  div.col-lg-3.col-12.p-0.text-center.like-field
     div.card.mb-2.p-1
-      div.card-header.text.fw-bold
-        | いいね
+      div.card-header.text.fw-bold.title-space
+        p.title いいね
       - @likes.each do |like|
-        div.card.m-1
+        div.card.m-1.field-inner
           div.card-content
-            div.card-title.name.mb-0
-              = link_to like.posted.name, posted_path(like.posted.id), class: 'like_post'
-            div.card-text.address
-              = like.posted.address
-            div.row.text-center.card-item.image.mb-2
+            div.card-title.name.mb-0.name-space
+              = link_to like.posted.name, posted_path(like.posted.id), class: 'like_post name'
+
+            div.card-text.address.address-space
+              p.address = like.posted.address
+
+            div.row.text-center.card-item.image.mb-2.image-space
               - if like.posted.images.attached?
                 - like.posted.images.each do |image|
-                  div.col-lg-3.col-12.p-0.image-box
-                    = image_tag image, width:100, height:100, class: 'image border'
-            div.card-text.caption.text-left.p-1
-              | caption: 
-              span
-                = like.posted.caption
+                  div.col-lg-3.col-12.p-0.image-box.image-space-inner
+                    = image_tag image, width:100, height:100, class: 'image border image'
+
+            div.card-text.caption.text-left.p-1.capcom-space
+              p.ttl caption: 
+              p.capcom = like.posted.caption

@@ -1,13 +1,18 @@
 h3.mt-1.mb-3
-  | パスワードをお忘れですか?
-.card.col-sm-5.mx-auto.mt-5
-  .card-body
+  p パスワードをお忘れですか?
+
+.card.col-12.mx-auto.mt-5
+
+  div.card-body
     = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
       = render "devise/shared/error_messages", resource: resource
-      .field[style="margin-bottom: 10px;"]
-        = f.label :email, class: 'mb-2'
+
+      div.field.forget-email-field
+        = f.label :email, class: 'mb-2 label'
         br
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control mb-4'
-      .actions[style="margin-bottom: 10px;"]
-        = f.submit "リセット用メール送信", class: 'btn btn-light mb-3'
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control mb-4 forget-email-form'
+
+      div.actions.forget-btn-field
+        = f.submit "リセット用メール送信", class: 'btn btn-light mb-3 forget-btn'
+
     = render "devise/shared/links"

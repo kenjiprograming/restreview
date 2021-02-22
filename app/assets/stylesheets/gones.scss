@@ -1,33 +1,23 @@
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 600px) {
 
   #gones-index {
-    a {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
-      }
-    }
-    
     .card {
       margin-bottom: 15px;
 
       .card-content {
-
         
-        .name, .comment {
+        .gone-name, .comment {
           font-size: 13px;
         }
         
-        .address {
+        .gone-address {
           font-size: 12px;
         }
         
-        .image_big_box {
+        .image-field {
           margin: 0 auto;
           
-          .image_box {
+          .image-field-inner {
             height: 400px;
             width: 100%;
             
@@ -44,7 +34,7 @@
           font-weight: bold;
         }
         
-        .detail_btn, .delete_btn {
+        .detail-btn, .delete-btn {
           width: 40%;
           border: gray 1px solid;
           margin-bottom: 15px;
@@ -57,16 +47,14 @@
   
 
   #gones-show {
-
-    
     .info_big_box {
       margin-bottom: 15px;
 
       .info_box {
-        .big_image_box {
+        .image-field {
           margin-bottom: 30px;
 
-          .image_box {
+          .image-field-inner {
             height: 400px;
             width: 100%;
             
@@ -76,17 +64,14 @@
             }
           }
         }
-
         .name {
           margin-bottom: 20px;
           font-size: 16px;
         }
-        
         .address, .opentime, .holiday, .budget {
           font-size: 12px;
           margin-bottom: 5px;
         }
-    
         .comment_box {
           font-size: 13px;
           margin-bottom: 7px;
@@ -96,7 +81,6 @@
             font-weight: bold;
           }
         }
-
         .date {
           color: gray;
           font-size: 11px;
@@ -104,7 +88,6 @@
           margin-bottom: 20px !important;
           text-align: center !important;
         }
-
         .go_top_btn, .delete_btn {
           width: 40%;
           border: gray 1px solid;
@@ -114,11 +97,7 @@
         }
       }
     }
-
-
-
     .action_big_box {
-
       .update_btn, .to_post_btn {
           width: 40%;
           border: gray 1px solid;
@@ -126,12 +105,10 @@
           font-size: 13px;
           color: gray;
       }
-
       .update_file, .to_post_file {
         margin-bottom: 10px;
         font-size: 12px;
       }
-
       .to_post_form, .update_form {
         margin-bottom: 10px;
         height: 100px;
@@ -142,92 +119,162 @@
 
 
 
-
-@media screen and (min-width: 768px) {
+// スマホ用レイアウト
+@media screen and (min-width: 599px) {
 
   #gones-index {
-    a {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .card-content {
+      .name {
+        font-size: 1rem;
+        margin-bottom: 30px;
       }
-    }
-    .name {
-      font-size: 13px;
-    }
-    .address {
-      font-size: 12px;
-    }
-    .detail, .delete {
-      font-size: 12px;
-    }
-    .image {
-      height: 100px;
-      max-height: 100px;
-      margin: 0 auto;
-    }
-    .comment {
-      font-size: 13px;
-    }
-    .image_box {
-      // margin: 0 auto;
-      min-width: 100px;
-    }
-    .date {
-    color: gray;
-    font-size: 11px;
-    font-weight: bold;
+      .address {
+        font-size: 1rem;
+        margin-bottom: 30px;
+      }
+      .image-field {
+        min-width: 100px;
+        .image {
+          height: 100px;
+          max-height: 100px;
+          margin: 0 auto;
+        }
+      }
+      .comment {
+        font-size: 1rem;
+      }
+      .date {
+        color: gray;
+        font-size: 1rem;
+      }
+      .action {
+        .detail-btn {
+          font-size: 1.4rem;
+          width: 200px;
+        }
+        .delete-btn {
+          font-size: 1.4rem;
+          width: 200px;
+        }
+      }
     }
   }
   
+
   #gones-show {
-    .gone_box {
-      margin: auto;
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 30px;
     }
-    .name {
-      margin-bottom: 20px;
-    }
-    a {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
+    .info-field {
+      .card-header {
+        font-size: 1rem;
+        margin-bottom: 30px;
+
+        p {
+          margin-top: 1rem;
+        }
+      }
+      .card-content {
+        .image-field {
+          .image-field-inner {
+            min-width: 150px;
+            .image {
+              height: 150px;
+              width: 150px;
+            }
+          }
+        }
+        .name, .address, .opentime, .holiday, .budget {
+          font-size: 1rem;
+          margin-bottom: 30px;
+        }
+        .comment-field {
+          margin-bottom: 30px;
+
+          .comment-label {
+
+          }
+          .comment {
+            font-size: 1rem;
+            span {
+              font-weight: bold;
+            }
+          }
+        }
+        .date {
+          color: gray;
+          font-size: 1rem;
+          margin-bottom: 30px !important;
+        }
+        .action {
+          .top-page-field, .delete-field {
+            .go-top-btn, .delete-btn {
+              width: 200px;
+              font-size: 1.4rem;
+              color: gray;
+            }
+          }
+        }
+
       }
     }
-    .address, .opentime, .holiday, .budget, .btn {
-      font-size: 12px;
-      margin-bottom: 5px;
-    }
-    .comment {
-      font-size: 13px;
-      margin-bottom: 7px;
-      span {
-        font-weight: bold;
+
+
+    .action-field {
+      .card-header {
+        font-size: 1rem;
+        margin-bottom: 30px;
+
+        p {
+          margin-top: 1rem;
+        }
       }
-    }
-    .file {
-      font-size: 12px;
-    }
-    .btn {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
-      }
-    }
-    .date {
-      color: gray;
-      font-size: 11px;
-      font-weight: bold;
-    }
-    .image_box {
-      min-width: 150px;
-      img {
-        height: 150px;
-        width: 150px;
+      .card-content {
+        .update-field {
+          .form-group {
+            .update-form {
+              margin-bottom: 30px;
+              height: 100px;
+              width: 100%;
+              font-size: 1rem;
+            }
+            .update-file {
+              margin-bottom: 30px;
+              font-size: 1rem;
+            }
+          }
+          .update-btn {
+            width: 40%;
+            margin-bottom: 30px;
+            font-size: 1.4rem;
+            color: gray;
+          }
+        }
+        .post-form-field {
+          .form-group {
+            .post-form {
+              margin-bottom: 30px;
+              height: 100px;
+              width: 100%;
+              font-size: 1rem;
+            }
+            .post-file {
+              margin-bottom: 30px;
+              font-size: 1rem;
+            }
+          }
+          .post-btn {
+            width: 40%;
+            margin-bottom: 30px;
+            font-size: 1.4rem;
+            color: gray;
+          }
+        }
       }
     }
   }

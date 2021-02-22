@@ -18,9 +18,12 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+// PC用レイアウト
+@media screen and (max-width: 600px) {
 
-
-@media screen and (max-width: 767px) {
+  html {
+    font-size: 16px;
+  }
 
   nav {
     .logo {
@@ -31,10 +34,12 @@
 
       }
     }
+
     .nav-item {
       margin: auto;
 
     }
+
     .navbar-brand {
       color: gray;
       text-decoration: none;
@@ -44,96 +49,68 @@
     }
   }
 
-  #sessions-new, #registrations-new, #passwords-new, #confirmations-new, #registrations-create, #confirmations-create, #passwords-edit {
-    font-size: 14px;
-
-    .btn {
-      color: gray;
-      text-decoration: none;
-      width: 40%;
-      font-size: 15px;
-      border: 1px solid gray;
-
-      &:hover {
-        color: black;
-      }
-    }
-    .field {
-    margin-bottom: 15px;
-    }
-    .actions {
-      margin-bottom: 15px;
-    }
-    
-    .error_title {
-      font-size: 15px;
-      color: red;
-
-    }
-    .error_message {
-      list-style: none;
-      font-size: 15px;
-      color: red;
-
-    }
-    .devise_btn {
-      font-size: 15px;
-      text-decoration: none;
-      display: block;
-      width: 90%;
-      background: #f8f9fa;
-      margin: auto;
-    }
-  }
 }
 
-@media screen and (min-width: 768px) {
+// スマホ用レイアウト
+@media screen and (min-width: 599px) {
 
-  a {
-    color: gray;
-    text-decoration: none;
-    font-size: 13px;
+  html {
+    font-size: 16px;
+  }
+  .container {
+    max-width: 900px !important;
+  }
 
+  a, .btn {
+  color: gray;
+  text-decoration: none;
+  font-size: 1.1rem !important;
+  margin-bottom: 30px !important;
     &:hover {
       color: black;
-
     }
   }
 
   nav {
     .logo {
-      font-size: 16px;
+      font-size: 2rem;
+      color: gray !important;
+      margin: auto 0 !important;
 
-      .logo_sub {
-        font-size: 9px;
+      p {
+        margin: auto 0;
+      }
 
+      .logo-sub {
+        display: none;
       }
     }
-    .nav-item {
-      margin: auto;
+    
+    .humberger-logo {
+      width: 130px;
+      height: 60px;
+      margin-right: 20px;
 
+      .navbar-toggler-icon {
+        width: 50px;
+      }
+    }
+
+    .humberger-inner {
+      .navbar-nav {
+        text-align: center;
+
+        .navbar-item {
+          margin: auto;
+          height: 60px;
+
+          .nav-link {
+            font-size: 2rem;
+          }
+        }
+      }
     }
   }
 
-  #sessions-new, #registrations-new, #passwords-new, #confirmations-new, #registrations-create, #confirmations-create, #passwords-edit {
-    font-size: 14px;
-    .btn {
-      color: gray;
-      text-decoration: none;
-      font-size: 14px;
-      &:hover {
-        color: black;
-      }
-    }
-    .error_title {
-      font-size: 15px;
-      color: red;
-    }
-    .error_message {
-      list-style: none;
-      font-size: 15px;
-      color: red;
-    }
-  }
 }
 

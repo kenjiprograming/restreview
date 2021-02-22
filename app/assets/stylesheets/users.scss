@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 600px) {
   
   #user-show {
     .info_big_box {
@@ -103,73 +103,158 @@
 }
 
 
+// スマホ用レイアウト
+@media screen and (min-width: 599px) {
 
-
-
-
-
-@media screen and (min-width: 768px) {
-  
-  #user-show {
-    .follow-box {
-      margin: 0 auto;
+  // ユーザー一覧
+  #user-index {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 30px;
     }
-    a {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
+    .search-area {
+      .title-space {
+        margin-bottom: 2rem !important;
+        .title {
+          font-size: 1.3rem;
+          margin: 0 !important;
+        }
+      }
+      .search-field {
+        .search-space {
+          .label {
+            font-size: 1.3rem;
+            margin-bottom: 2rem !important;
+          }
+          .search-space-inner {
+            .search-form {
+              height: 2rem;
+              width: 200px;
+              font-size: 1rem;
+              margin-right: 2rem !important;
+            }
+            .search-btn {
+              margin: 0 !important;
+            }
+          }
+        }
       }
     }
-    .address, .btn {
-      font-size: 12px;
-      margin-bottom: 5px;
-    }
-    .caption {
-      font-size: 13px;
-      margin-bottom: 7px;
-      span {
-        // font-weight: bold;
+
+    .hit-area {
+      .title-space {
+        margin-bottom: 2rem !important;
+        .title {
+          font-size: 1.3rem;
+          margin: 0 !important;
+        }
       }
-    }
-    .btn {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
+      .hit-field {
+        .hit-space {
+          margin: auto;
+          margin-bottom: 1.8rem !important;
+          .email-btn {
+            font-size: 1rem;
+            margin: 0 !important;
+            padding: 0.5rem 0;
+          }
+        }
       }
+
     }
   }
-  
-  #user-index {
-    .search_form_box {
-      max-height: 200px;
-      min-height: 200px;
+
+  // ユーザー詳細
+  #user-show {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
-    .search_form {
-      margin: auto;
+    p {
+      margin: 0 !important;
     }
-    .btn {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
+    .follows-field {
+      margin-bottom: 2rem;
+      .email-space {
+        .email {
+          font-size: 1.3rem;
+        }
+      }
+      .action-space {
+        .search-btn {
+          margin: 0 !important;
+          margin-right: 2rem !important;
+          width: 200px;
+          border: none;
+        }
+        .follows-btn {
+          margin: 0 !important;
+          width: 250px;
+          border: none;
+        }
+        .action-space-inner {
+          .unfollow-btn {
+          }
+          .follow-btn {
+          }
+        }
       }
     }
-    a {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
+
+
+    .inform-area {
+      .want-field, 
+      .gone-field,
+      .post-field,
+      .like-field {
+        .title-space {
+          margin-bottom: 0.5rem !important;
+          .title {
+            margin-top: 0.5rem !important;
+            font-size: 1rem !important;
+            font-weight: normal !important;
+          }
+        }
+        .field-inner {
+          margin-bottom: 0.5rem !important;
+          .name-space {
+            margin-bottom: 0.5rem !important;
+            margin-top: 0.5rem;
+            .name {
+              font-size: 1.3rem;
+            }
+          }
+          .address-space {
+            margin-bottom: 1rem;
+            .address {
+              font-size: 1rem;
+            }
+          }
+          .capcom-space {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 0.5rem !important;
+            p {
+              display: inline-block;
+            }
+            .ttl {
+              margin-right: 5px !important;
+            }
+            .capcom {
+
+            }
+          }
+        }
       }
-    }
-    .email_box {
-      margin: 0 auto;
-    }
-    .user_search {
-      outline: none;
+      .like-field {
+        .image-space {
+          .image-space-inner {
+            .image {
+
+            }
+          }
+        }
+      }
     }
   }
 }

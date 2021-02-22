@@ -1,48 +1,45 @@
-h3 行きたいお店詳細
+h3 
+   p 行きたいお店詳細
 .row
+   div.col-lg-8.col-12.p-3.text-center.card.info-area
+      div.card-header.p-0.title-space
+         p.title お店情報
 
-  .col-lg-8.col-xs-12.p-3.text-center.card
-
-    .card-header.p-0
-      | restaurant info
-
-    .card-content.w-75
-      .name.card-item.fw-bold
-        = @want.name
-      .address.card-item
-        = @want.address
-      .opentime.card-item.text-left
-        | opentime: 
-        = @want.opentime
-      .holiday.card-item.text-left
-        | holiday: 
-        = @want.holiday
-      .budget.card-item.text-left
-        | 予算: ¥
-        = @want.budget
-      .caption.card-item.text-left
-        | caption: 
-        = @want.caption
-      .listname.card-item.text-left
-        | listname: 
-        = @want.listname
-      .date.card-item.text-left
-        = @want.created_at.to_s(:datetime_jp)
+      div.card-content.w-75.info-field
+         div.name.card-item.fw-bold.name-space
+            p.name = @want.name
+         div.address.card-item.address-space
+            p.address = @want.address
+         div.opentime.card-item.text-left.opentime-space
+            p.ttl opentime: 
+            p.opentime = @want.opentime
+         div.holiday.card-item.text-left.holiday-space
+            p.ttl holiday: 
+            p.holiday = @want.holiday
+         div.budget.card-item.text-left.budget-space
+            p.ttl 予算: ¥
+            p.budget = @want.budget
+         div.caption.card-item.text-left.caption-space
+            p.ttl caption: 
+            p.caption = @want.caption
+         div.listname.card-item.text-left.listname-space
+            p.ttl listname: 
+            p.litname = @want.listname
+         div.date.card-item.text-left.date-space
+            p.date = @want.created_at.to_s(:datetime_jp)
 
 
-  .col-lg-8.col-xs-12.p-3.text-center.card
+   div.col-lg-8.col-xs-12.p-3.text-center.card.action-area
+      div.card-content.row
+         div.top_page.card-item.col-lg-4.col-4.to-top-btn-space
+            = link_to 'お店のトップページへ', @want.url, target: :_blank, class: 'btn btn-light top_btn to-top-btn'
 
-    .card-content.row
+         div.go_or_nogo.card-item.col-lg-4.col-4.to-go-or-no-go-btn-space
+            - gone = Gone.where(name: @want.name, user_id: current_user.id).first
+            -if gone.present?
+               = link_to 'もう行った!', gone_path(id: gone.id), method: :delete, class: 'btn btn-light no_go_btn to-not-go-btn'
+            -else
+               = link_to '行った!にする', gones_path(want_id: @want.id), method: :post, class: 'btn btn-light go_btn to-go-btn'
 
-      .top_page.card-item.col-lg-4.col-xs-12
-        = link_to 'お店のトップページへ', @want.url, target: :_blank, class: 'btn btn-light top_btn'
-
-      .go_or_nogo.card-item.col-lg-4.col-xs-12
-        - gone = Gone.where(name: @want.name, user_id: current_user.id).first
-        -if gone.present?
-          = link_to 'もう行った!', gone_path(id: gone.id), method: :delete, class: 'btn btn-light no_go_btn'
-        -else
-          = link_to '行った!にする', gones_path(want_id: @want.id), method: :post, class: 'btn btn-light go_btn'
-
-      .delete.card-item.col-lg-4.col-xs-12
-        = link_to '行きたいお店から削除', want_path(@want), method: :delete, class: 'btn btn-light delete_btn'
+         div.delete.card-item.col-lg-4.col-4.delete-btn-space
+            = link_to '行きたいお店から削除', want_path(@want), method: :delete, class: 'btn btn-light delete_btn delete-btn'

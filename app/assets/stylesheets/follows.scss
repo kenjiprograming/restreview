@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 600px) {
   #follows-index {
     .card-header {
       margin-bottom: 20px;
@@ -28,20 +28,20 @@
 
 
 
-
-@media screen and (min-width: 768px) {
+// スマホ用レイアウト
+@media screen and (min-width: 599px) {
   #follows-index {
-    .card-header {
+    .follow-ttl {
       margin-bottom: 20px;
-    }
-    a {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
+
+      p {
+        font-size: 1.5rem;
+        color: gray;
+        margin: 0;
       }
     }
-    .follow_box {
+
+    .follow-field{
       margin: 5px auto;
     }
   }

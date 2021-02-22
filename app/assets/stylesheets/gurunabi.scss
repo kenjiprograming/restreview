@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 600px) {
   #gurunabi-search {
     a {
       color: gray;
@@ -92,86 +92,135 @@
 
 
 
+// スマホ用レイアウト
+@media screen and (min-width: 599px) {
 
-@media screen and (min-width: 768px) {
   #gurunabi-search {
-    a {
-        color: gray;
-        text-decoration: none;
-        font-size: 13px;
-        &:hover {
-          color: black;
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .search-form-field {
+      .card-header {
+        font-size: 1rem;
+        margin-bottom: 30px;
+
+        p {
+          margin-top: 1rem;
         }
       }
-    .search_form_box {
-
-      max-height: 250px;
-      min-height: 200px;
-
-      .search_form {
-        margin: auto 0;
-
-        .align {
-          align-items: baseline;
-
-          .guru_submit {
-            margin-top: auto;
+      .card-content {
+        .form-group {
+          .label {
+            margin-bottom: 30px!important;
+            font-size: 1rem;
           }
-          
-          .btn {
-            color: gray;
-            text-decoration: none;
-            font-size: 13px;
-
-            &:hover {
-              color: black;
+          .name-form {
+            margin-bottom: 30px;
+            width: 100%;
+            font-size: 1rem;
+          }
+          .label {
+            margin-bottom: 30px!important;
+            font-size: 1rem;
+          }
+          .freeword-form {
+            margin-bottom: 30px;
+            width: 100%;
+            font-size: 1rem;
+          }
+          .search-btn-field {
+            text-align: center;
+            .search-btn {
+              width: 40%;
+              margin-bottom: 30px;
+              font-size: 1.4rem;
+              color: gray;
             }
           }
         }
       }
     }
 
-    .search_hits {
-      .rest_box {
-        margin: 0 auto;
+    .search-hits-field {
+      .card-header {
+        font-size: 1rem;
+        margin-bottom: 30px !important;
 
-        a {
-          font-size: 15px;
-
+        p {
+          margin-top: 1rem;
         }
-        .address {
-          font-size: 13px;
-
+      }
+      .card-content {
+        .rest-field {
+          margin-bottom: 30px !important;
+          .card-content-2 {
+            .name {
+              font-size: 1rem;
+            }
+            .address {
+              font-size: 1rem;
+            }
+          }
         }
       }
     }
-    
-    #gurunabi-show {
-      a {
-        color: gray;
-        text-decoration: none;
-        &:hover {
-          color: black;
+  }
+
+
+  #gurunabi-show {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .search-show-field {
+      .card-header {
+        font-size: 1rem;
+        margin-bottom: 30px;
+
+        p {
+          margin-top: 1rem;
         }
       }
-      .address, .opentime, .holiday, .budget, .btn, .caption, .list-name {
-        font-size: 13px;
-        margin-bottom: 5px;
-      }
-      .rest_box {
-        margin: auto;
-      }
-      .name {
-        font-size: 15px;
-        margin-bottom: 10px;
-      }
-      .btn {
-        color: gray;
-        text-decoration: none;
-        &:hover {
-          color: black;
+      .card-content {
+
+        .card-item {
+          font-size: 1rem;
+          margin-bottom: 30px;
         }
       }
     }
+    .action-field {
+      .card-header {
+        font-size: 1rem;
+        margin-bottom: 30px !important;
+
+        p {
+          margin-top: 1rem;
+        }
+      }
+      .card-content {
+        .form-group {
+          .caption-form {
+            margin-bottom: 30px;
+            height: 100px;
+            width: 100%;
+            font-size: 1rem;
+          }
+          .list-name-form {
+            margin-bottom: 30px;
+            width: 100%;
+            font-size: 1rem;
+          }
+        }
+        .add-list-btn {
+          width: 40%;
+          font-size: 1.4rem;
+          color: gray;
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+
   }
 }

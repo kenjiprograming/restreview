@@ -1,5 +1,6 @@
 doctype html
 html
+
   head
     title
       | RestReview
@@ -7,17 +8,20 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  body id="#{controller.controller_name}-#{controller.action_name}"
-    nav.navbar.navbar-expand-lg.navbar-light.bg-light
-      = link_to root_path, class: 'nav-link logo navbar-brand' do 
-        | RestReview
-        span.logo_sub
-        |  〜あのお店を忘れない〜
 
-      button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+
+  body id="#{controller.controller_name}-#{controller.action_name}"
+
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      = link_to root_path, class: 'nav-link navbar-brand logo' do 
+        p RestReview
+        span.logo-sub
+          p  〜あのお店を忘れない〜
+
+      button.navbar-toggler.humberger-logo type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
         span.navbar-toggler-icon
 
-      div#navbarSupportedContent.collapse.navbar-collapse.justify-content-end
+      div#navbarSupportedContent.collapse.navbar-collapse.justify-content-end.humberger-inner
         ul.navbar-nav.mr-auto
           - if current_user
             li.nav-item.active
@@ -26,17 +30,20 @@ html
               = link_to "行きたいお店", wants_path, class: "nav-link"
             li.nav-item
               = link_to "行ったお店", gones_path, class: "nav-link"
+
         ul.navbar-nav
           - if current_user
             li.nav-item
               = link_to current_user.email, user_path(current_user), class: "nav-link", id: 'mypage'
             li.nav-item
               = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"
+
           - else
             li.nav-item
               = link_to "新規登録", new_user_registration_path, class: "nav-link"
             li.nav-item
               = link_to "ログイン", new_user_session_path, class: "nav-link"
+
 
     div.container.text-center.mt-4
       - if notice
@@ -45,4 +52,5 @@ html
       - if alert
         p.text-danger
           = alert
+          
       = yield

@@ -1,0 +1,263 @@
+// PC用レイアウトここから
+@media screen and (max-width: 600px) {
+
+  #sessions-new,
+  #registrations-new,
+  #passwords-new,
+  #confirmations-new,
+  #registrations-create,
+  #confirmations-create,
+  #passwords-edit {
+    font-size: 14px;
+
+    .btn {
+      color: gray;
+      text-decoration: none;
+      width: 40%;
+      font-size: 15px;
+      border: 1px solid gray;
+
+      &:hover {
+        color: black;
+      }
+    }
+
+    .field {
+    margin-bottom: 15px;
+    }
+
+    .actions {
+      margin-bottom: 15px;
+    }
+    
+    .error_title {
+      font-size: 15px;
+      color: red;
+
+    }
+
+    .error_message {
+      list-style: none;
+      font-size: 15px;
+      color: red;
+
+    }
+
+    .devise_btn {
+      font-size: 15px;
+      text-decoration: none;
+      display: block;
+      width: 90%;
+      background: #f8f9fa;
+      margin: auto;
+    }
+  }
+
+}
+// PC用レイアウトここまで
+
+
+// スマホ用レイアウトここから
+@media screen and (min-width: 599px) {
+
+  // 共通項
+  #sessions-new,
+  #registrations-new,
+  #passwords-new,
+  #confirmations-new,
+  #registrations-create,
+  #confirmations-create,
+  #passwords-edit {
+
+    .devise_btn {
+      margin-bottom: 30px;
+      display: inline-block;
+      font-size: 1.8rem;
+      text-decoration: underline;
+    }
+
+    .error_title {
+      font-size: 1.8rem;
+      color: red;
+    }
+
+    .error_message {
+      list-style: none;
+      font-size: 1.8rem;
+      color: red;
+    }
+
+  }
+
+  #sessions-new {
+    h3 {
+      font-size: 2rem;
+    }
+    .form-group {
+      margin-bottom: 30px;
+
+      .label {
+        margin-bottom: 30px!important;
+        font-size: 1.8rem;
+      }
+      .email-from {
+        height: 48px;
+      }
+      .password-form {
+        height: 48px;
+      }
+    }
+    .check-box-field {
+      margin-bottom: 30px;
+
+      .check-box {
+        transform: scale(2.2);
+        margin-right: 30px;
+      }
+      .label {
+        margin-bottom: 30px!important;
+        font-size: 1.5rem;
+      }
+    }
+    .login-btn-field {
+      .login-btn {
+
+      }
+    }
+
+  }
+
+
+  #registrations-new {
+    h3 {
+      font-size: 2rem;
+    }
+    .form-group {
+      margin-bottom: 30px;
+
+      .label{
+        margin-bottom: 30px!important;
+        font-size: 1.8rem;
+      }
+      .email-from {
+        height: 48px;
+      }
+      .password-form {
+        height: 48px;
+      }
+    }
+
+    .confirm-field {
+      margin-bottom: 50px !important;
+
+      .label {
+        margin-bottom: 30px!important;
+        font-size: 1.8rem;
+      }
+      .password-form {
+        height: 48px;
+      }
+    }
+
+    .registration-btn-field {
+      margin-bottom: 10px;
+
+      .registration-btn {
+
+      }
+    }
+  }
+
+  #passwords-new {
+    h3 {
+      font-size: 2rem;
+    }
+    .forget-email-field {
+      margin-bottom: 50px !important;
+
+      .label {
+        margin-bottom: 30px!important;
+        font-size: 1.8rem;
+      }
+      .forget-email-form {
+        height: 48px;
+      }
+
+    }
+    .forget-btn-field {
+      margin-bottom: 10px;
+
+      .forget-btn {
+
+      }
+    }
+  }
+
+  #confirmations-new {
+    h3 {
+      font-size: 2rem;
+    }
+    .confirmation-email-field {
+      margin-bottom: 50px !important;
+
+      .label {
+        margin-bottom: 30px!important;
+        font-size: 1.8rem;
+      }
+      .confirmation-email-form {
+        height: 48px;
+      }
+
+    }
+    .confirmation-btn-field {
+      margin-bottom: 10px;
+
+      .confirmation-btn {
+
+      }
+    }
+  }
+  // この2つは登録した時にしか現れないから、その時に修正する
+  #registrations-create,
+  #confirmations-create {
+    h3 {
+      font-size: 2rem;
+    }
+    .form-group {
+      margin-bottom: 30px;
+
+      .label{
+        margin-bottom: 30px!important;
+        font-size: 1.8rem;
+      }
+      .email {
+        height: 48px;
+      }
+      .password {
+        height: 48px;
+      }
+    }
+
+    .field {
+      margin-bottom: 50px !important;
+
+      .label {
+        margin-bottom: 30px!important;
+        font-size: 1.8rem;
+      }
+      .password {
+        height: 48px;
+      }
+    }
+
+    // .field {
+    //   margin-bottom: 10px;
+
+    //   .registration-btn {
+
+    //   }
+    // }
+  }
+  // #passwords-edit
+}
+// スマホ用レイアウトここまで

@@ -1,13 +1,17 @@
 h3.mt-1.mb-3
-  | 認証用メールの再送信
-.card.col-sm-5.mx-auto.mt-5
-  .card-body
-    = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| 
+  p 認証用メールの再送信
+
+div.card.col-12.mx-auto.mt-5
+
+  div.card-body
+   = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| 
       = render "devise/shared/error_messages", resource: resource 
-      .field
-        = f.label :email, class: 'mb-2'
+
+      div.field.confirmation-email-field
+        = f.label :email, class: 'mb-2 label'
         br
-        = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'form-control mb-2'
-      .actions
-        = f.submit "認証用メールの再送信", class: 'btn btn-light mb-3'
-    = render "devise/shared/links" 
+        = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'form-control mb-2 confirmation-email-form'
+      div.actions.confirmation-btn-field
+        = f.submit "認証用メールの再送信", class: 'btn btn-light mb-3 confirmation-form'
+
+   = render "devise/shared/links" 

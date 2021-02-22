@@ -1,44 +1,54 @@
 h3 
-  | 投稿詳細画面
-.row.justify-content-center
+  p 投稿詳細画面
+div.row.justify-content-center
   - if @posted.images.attached?
     - @posted.images.each do |image|
-      .col-lg-4.col-xs-12.p-0.
-        .card
-          = image_tag image, class: "card-img-top image border p-1"
-  .col-lg-6.col-xs-12.p-0
-    .card.h-100
-      .card-content
-        p.card-text.border-bottom
-          = @posted.user.email
-        p.card-text.name
-          = link_to @posted.name, @posted.url, target: :_blank, class: 'post_name'
-        p.card-text.address
-          = @posted.address
-        p.card-text.caption.text-left
-          span #{ @posted.user.email }
-          |  #{ @posted.caption }
-        .row
-          p.card-text.text-left.col-lg-1.col-xs-12
-            - if current_user.likes.find_by(posted_id: @posted.id)
-              = link_to posted_like_path(@posted, current_user), method: :delete, class: 'like unlike' do 
-                <i class="fas fa-heart"></i>
-              end
-            - else
-              = link_to posted_likes_path(@posted), method: :post, class: 'like' do 
-                <i class="far fa-heart"></i>
-              end
-          p.card-text.heart.text-left.col-lg-2.col-xs-12
-            |  ♡
-            = @posted.likes.length
-          - if current_user == @posted.user
-            .card-text.col-lg-9.col-xs-12.text-right
-              = link_to "投稿を削除する", posted_path(@posted), method: :delete, class: 'delete'
-        p.card-text.text-left.date
-          = @posted.created_at.to_s(:datetime_jp)
-        .card-text
-          p.border-bottom されたいいね一覧
-          - @likes.each do |like|
-            div.be-liked.row
-              .col-lg-6.col-xs-12.text-left.p-0
-                = link_to like.user.email, user_path(like.user_id)
+     div.col-lg-4.col-12.p-0.image-field
+       div.card.image-space
+          = image_tag image, class: "card-img-top image border p-1 image"
+
+  div.col-lg-6.col-12.p-0
+    div.card.h-100
+      div.card-content
+        div.card-text.border-bottom.email-space
+          p.email = @posted.user.email
+
+        div.card-text.name.name-space
+          = link_to @posted.name, @posted.url, target: :_blank, class: 'post_name name'
+
+        div.card-text.address.address-space
+          p.address = @posted.address
+
+        div.card-text.caption.text-left.caption-space
+          span.email #{ @posted.user.email }
+          p.caption  #{ @posted.caption }
+        
+        div.card-text.action-area
+          div.row.action-field
+            div.card-text.text-left.col-lg-1.col-12.like-space
+              - if current_user.likes.find_by(posted_id: @posted.id)
+                = link_to posted_like_path(@posted, current_user), method: :delete, class: 'like unlike unlike-btn' do 
+                  <i class="fas fa-heart"></i>
+                end
+              - else
+                = link_to posted_likes_path(@posted), method: :post, class: 'like like-btn' do 
+                  <i class="far fa-heart"></i>
+                end
+
+            div.card-text.heart.text-left.col-lg-2.col-12.heart-space
+              p.heart <i class="far fa-heart"></i>
+              p.length = @posted.likes.length
+
+            div.card-text.text-left.date-space
+              p.date = @posted.created_at.to_s(:datetime_jp)
+
+            - if current_user == @posted.user
+            div.card-text.col-lg-9.col-12.text-right.delete-space
+                = link_to "投稿を削除する", posted_path(@posted), method: :delete, class: 'btn btn-light delete delete-btn'
+
+            div.card-text.beliked-space
+              p.border-bottom.title されたいいね一覧
+              - @likes.each do |like|
+                div.be-liked.row.beliked-space-inner
+                  div.col-lg-6.col-12.text-left.p-0.inner-inner
+                    = link_to like.user.email, user_path(like.user_id), class: 'email-btn'

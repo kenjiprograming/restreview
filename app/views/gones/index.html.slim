@@ -1,28 +1,34 @@
 h3.mb-3
-  | 行ったお店一覧
-.row.justify-content-left
+  p 行ったお店一覧
+
+div.row.justify-content-left
   - @gones.each do |gone|
-    div.card.col-lg-4.col-xs-12.p-1.mb-1
+    div.card.col-lg-4.col-12.p-1.mb-1
       div.card-content
-        p.card-header.name.fw-bold
+        p.card-header.fw-bold.name
           = gone.name
-        p.card-text.address.text-center.mt-1.p-1
+
+        p.card-text.text-center.mt-1.p-1.address
           = gone.address
-        div.row.justify-content-center.image_big_box
+
+        div.row.justify-content-center.image-field
           - if gone.images.attached?
             - gone.images.each do |image|
-              div.col-lg-3.col-xs-12.p-0.image_box
-                = image_tag image, class: 'image border'
-        p.card-text.comment.text-left.p-1
-          | comment: 
-          = gone.comment if gone.comment
-        p.card-text.date.text-left.p-1
-          = gone.created_at.to_s(:datetime_jp)
-        div.card-link.mt-4.p-2.row
-          div.col-lg-6.col-xs-12.p-0
-            = link_to '詳細', gone_path(gone), class: 'detail_btn text-center btn btn-light'
+              div.col-lg-3.col-12.p-0.image-field-inner
+                = image_tag image, class: 'border image'
 
-          div.col-lg-6.col-xs-12.p-0
-            = link_to '削除', gone_path(gone), method: :delete, class: 'delete_btn btn btn-light'
+        p.card-text.text-left.p-1.comment
+          p comment: 
+          = gone.comment if gone.comment
+
+        p.card-text.p-1.date
+          = gone.created_at.to_s(:datetime_jp)
+
+        div.card-link.mt-4.p-2.row.action
+          div.col-lg-6.col-6.p-0
+            = link_to '詳細', gone_path(gone), class: 'btn btn-light detail-btn'
+
+          div.col-lg-6.col-6.p-0
+            = link_to '削除', gone_path(gone), method: :delete, class: 'btn btn-light delete-btn'
 
 
