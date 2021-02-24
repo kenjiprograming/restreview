@@ -1,30 +1,30 @@
 h3.mb-3
   p 行ったお店一覧
 
-div.row.justify-content-left
+div.row.justify-content-left.p-2
   - @gones.each do |gone|
     div.card.col-lg-4.col-12.p-1.mb-1
       div.card-content
-        p.card-header.fw-bold.name
-          = gone.name
+        div.card-header.fw-bold.name
+          p = gone.name
 
-        p.card-text.text-center.mt-1.p-1.address
-          = gone.address
+        div.card-text.text-center.address
+          p = gone.address
 
-        div.row.justify-content-center.image-field
+        div.justify-content-center.image-field
           - if gone.images.attached?
-            - gone.images.each do |image|
-              div.col-lg-3.col-12.p-0.image-field-inner
-                = image_tag image, class: 'border image'
+            / - gone.images.each do |image|
+            div.p-0.image-field-inner
+              = image_tag gone.images.first, class: 'border image'
 
-        p.card-text.text-left.p-1.comment
+        div.card-text.text-left.p-1.comment
           p comment: 
-          = gone.comment if gone.comment
+          p  = gone.comment if gone.comment
 
-        p.card-text.p-1.date
-          = gone.created_at.to_s(:datetime_jp)
+        div.card-text.date
+          p = gone.created_at.to_s(:datetime_jp)
 
-        div.card-link.mt-4.p-2.row.action
+        div.card-link.row.action
           div.col-lg-6.col-6.p-0
             = link_to '詳細', gone_path(gone), class: 'btn btn-light detail-btn'
 

@@ -1,158 +1,53 @@
-@media screen and (max-width: 600px) {
-  
-  #user-show {
-    .info_big_box {
-      margin-bottom: 15px;
-    }
-    .info_name, .info_btn_box {
-      text-align: center !important;
-    }
-
-    .search_btn, .follows_btn, .follow-unfollow-btn {
-      width: 40%;
-      border: gray 1px solid;
-      margin-bottom: 15px;
-      font-size: 13px;
-      color: gray;
-    }
-
-
-    .follow-box {
-      margin: 0 auto;
-    }
-    a {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
-      }
-    }
-    .address, .btn {
-      font-size: 12px;
-      margin-bottom: 5px;
-    }
-    .caption {
-      font-size: 13px;
-      margin-bottom: 7px;
-      span {
-        // font-weight: bold;
-      }
-    }
-    .btn {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
-      }
-    }
-  }
-
-  
-  #user-index {
-    .search_form_box {
-      max-height: 200px;
-      min-height: 200px;
-      margin: 0;
-      margin-bottom: 15px;
-    }
-    .search_field {
-      width: 90%;
-      margin-bottom: 15px;
-    }
-    .search_submit_btn {
-      width: 40%;
-      border: gray 1px solid;
-      margin-bottom: 15px;
-      font-size: 13px;
-      color: gray;
-    }
-    .btn {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
-      }
-    }
-    a {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
-      }
-    }
-    .email_box {
-      margin: 0 auto;
-      width: 100% !important;
-      margin-bottom: 20px !important;
-      height: 40px;
-
-      .email_consequences {
-        margin: auto 0;
-        
-        .email {
-          font-size: 17px;
-        }
-      }
-    }
-    .user_search {
-      outline: none;
-    }
-  }
-}
-
-
-// スマホ用レイアウト
-@media screen and (min-width: 599px) {
-
-  // ユーザー一覧
+// @media screen and (max-width: 768px) {
+/////////////////////////////////////////////////
   #user-index {
     h3 {
       font-size: 2rem;
       margin-bottom: 30px;
     }
+    p {
+      margin: 0;
+      padding: 0;
+    }
     .search-area {
       .title-space {
         margin-bottom: 2rem !important;
         .title {
-          font-size: 1.3rem;
-          margin: 0 !important;
+          font-size: 1rem;
         }
       }
       .search-field {
         .search-space {
           .label {
-            font-size: 1.3rem;
-            margin-bottom: 2rem !important;
+            font-size: 1rem;
+            margin-bottom: 2rem;
           }
           .search-space-inner {
             .search-form {
-              height: 2rem;
+              height: 40px;
               width: 200px;
               font-size: 1rem;
               margin-right: 2rem !important;
             }
             .search-btn {
               margin: 0 !important;
+              font-size: 0.8rem;
             }
           }
         }
       }
     }
-
     .hit-area {
       .title-space {
-        margin-bottom: 2rem !important;
+        margin-bottom: 2rem;
         .title {
-          font-size: 1.3rem;
-          margin: 0 !important;
+          font-size: 1rem;
         }
       }
       .hit-field {
         .hit-space {
           margin: auto;
-          margin-bottom: 1.8rem !important;
+          margin-bottom: 1rem ;
           .email-btn {
             font-size: 1rem;
             margin: 0 !important;
@@ -160,11 +55,10 @@
           }
         }
       }
-
     }
   }
 
-  // ユーザー詳細
+/////////////////////////////////////////////////
   #user-show {
     h3 {
       font-size: 2rem;
@@ -177,19 +71,173 @@
       margin-bottom: 2rem;
       .email-space {
         .email {
-          font-size: 1.3rem;
+          font-size: 1.5rem;
+          font-weight: bold;
         }
       }
       .action-space {
         .search-btn {
-          margin: 0 !important;
-          margin-right: 2rem !important;
-          width: 200px;
+          margin: 0;
+          margin-right: 2rem;
           border: none;
+          font-size: 0.8rem;
         }
         .follows-btn {
           margin: 0 !important;
-          width: 250px;
+          border: none;
+          font-size: 0.8rem;
+        }
+        .action-space-inner {
+          .unfollow-btn {
+            font-size: 0.8rem;
+          }
+          .follow-btn {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+    .inform-area {
+      .want-field, 
+      .gone-field,
+      .post-field,
+      .like-field {
+        padding: 0;
+        .title-space {
+          margin-bottom: 0.5rem;
+          .title {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+          }
+        }
+        .field-inner {
+          margin-bottom: 0.5rem;
+          .name-space {
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+            height: 40px;
+            .name {
+              font-size: 0.8rem;
+            }
+          }
+          .address-space {
+            margin-bottom: 1rem;
+            height: 40px;
+            .address {
+              font-size: 0.8rem;
+            }
+          }
+          .capcom-space {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            p {
+              display: inline-block;
+            }
+            .ttl {
+              margin-right: 5px;
+            }
+            .capcom {
+
+            }
+          }
+        }
+      }
+    }
+  }
+// }
+
+/////////////////////////////////////////////////
+//スマホ用レイアウト////////////////////////////
+@media screen and (max-width: 767px) {
+
+  // ユーザー一覧
+  #user-index {
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    .search-area {
+      .title-space {
+        margin-bottom: 2rem !important;
+        .title {
+          font-size: 1rem;
+          margin: 0 !important;
+        }
+      }
+      .search-field {
+        .search-space {
+          .label {
+            font-size: 1rem;
+            margin-bottom: 1rem !important;
+          }
+          .search-space-inner {
+            margin-bottom: 1rem;
+            .search-form {
+              height: 40px;
+              width: 200px;
+              font-size: 1rem;
+              margin-right: 1rem !important;
+            }
+            .search-btn {
+              margin: 0 !important;
+            }
+          }
+        }
+      }
+    }
+
+    .hit-area {
+      .title-space {
+        margin-bottom: 1rem !important;
+        .title {
+          font-size: 1rem;
+          margin: 0 !important;
+        }
+      }
+      .hit-field {
+        .hit-space {
+          margin: auto;
+          margin-bottom: 1rem !important;
+          .email-btn {
+            font-size: 1rem;
+            margin: 0 !important;
+            padding: 0.5rem 0;
+          }
+        }
+      }
+
+    }
+  }
+
+/////////////////////////////////////////////////
+  #user-show {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin: 0 !important;
+    }
+    .follows-field {
+      margin-bottom: 2rem;
+      .email-space {
+        text-align: center !important;
+        margin-bottom: 1rem;
+        .email {
+          font-size: 1rem;
+        }
+      }
+      .action-space {
+        text-align: center !important;
+        .search-btn {
+          margin: 0 1rem !important;
+          border: none;
+        }
+        .follows-btn {
+          margin: 0 1rem !important;
           border: none;
         }
         .action-space-inner {
@@ -200,8 +248,6 @@
         }
       }
     }
-
-
     .inform-area {
       .want-field, 
       .gone-field,
@@ -211,17 +257,17 @@
           margin-bottom: 0.5rem !important;
           .title {
             margin-top: 0.5rem !important;
-            font-size: 1rem !important;
+            font-size: 1.5rem;
             font-weight: normal !important;
           }
         }
         .field-inner {
-          margin-bottom: 0.5rem !important;
+          margin-bottom: 0.5rem;
           .name-space {
-            margin-bottom: 0.5rem !important;
+            margin-bottom: 0.5rem;
             margin-top: 0.5rem;
             .name {
-              font-size: 1.3rem;
+              font-size: 1rem;
             }
           }
           .address-space {

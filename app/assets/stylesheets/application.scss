@@ -18,81 +18,108 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-// PC用レイアウト
-@media screen and (max-width: 600px) {
+// PC用レイアウト /////////////////////////////////////
+@media screen and (min-width: 768px) {
 
   html {
     font-size: 16px;
   }
-
-  nav {
-    .logo {
-      font-size: 16px;
-
-      .logo_sub {
-        font-size: 9px;
-
+  
+  a, .btn {
+    color: gray !important;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0.5rem;
+      &:hover {
+        color: black !important;
       }
     }
 
+  p {
+    margin: 0 !important;
+  }
+
+  nav {
+    .logo-space {
+      margin-bottom: 0 !important;
+      padding-bottom: 0;
+      .logo {
+        font-size: 1.5rem;
+      }
+    }
+  
     .nav-item {
       margin: auto;
-
-    }
-
-    .navbar-brand {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
+      .nav-link {
+        padding-bottom: 0;
       }
     }
   }
 
+  .error_title {
+    font-size: 1rem;
+    color: red;
+
+  }
+
+  .error_message {
+    list-style: none;
+    font-size: 1rem;
+    color: red;
+  }
 }
 
-// スマホ用レイアウト
-@media screen and (min-width: 599px) {
+
+
+
+// スマホ用レイアウト ///////////////////////////////////
+@media screen and (max-width: 767px) {
 
   html {
     font-size: 16px;
   }
   .container {
-    max-width: 900px !important;
+    max-width: 590px !important;
   }
 
   a, .btn {
-  color: gray;
+  color: gray !important;
   text-decoration: none;
-  font-size: 1.1rem !important;
-  margin-bottom: 30px !important;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
     &:hover {
-      color: black;
+      color: black !important;
     }
+  }
+  p {
+    margin: 0 !important;
+  }
+  h3 {
+    font-size: 1.5rem !important;
   }
 
   nav {
-    .logo {
-      font-size: 2rem;
-      color: gray !important;
-      margin: auto 0 !important;
-
-      p {
-        margin: auto 0;
-      }
-
-      .logo-sub {
-        display: none;
+    .logo-space {
+      margin-bottom: 0 !important;
+      padding-bottom: 0;
+      .logo {
+        font-size: 1.5rem !important;
+        color: gray !important;
+        margin: auto 0 !important;
+        p {
+          margin: auto 0;
+        }
       }
     }
     
     .humberger-logo {
-      width: 130px;
-      height: 60px;
+      width: 60px;
+      height: 40px;
       margin-right: 20px;
 
       .navbar-toggler-icon {
-        width: 50px;
+        width: 30px;
       }
     }
 
@@ -110,6 +137,17 @@
         }
       }
     }
+  }
+
+  .error_title {
+    font-size: 1rem;
+    color: red;
+  }
+
+  .error_message {
+    list-style: none;
+    font-size: 1rem;
+    color: red;
   }
 
 }

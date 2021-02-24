@@ -1,145 +1,190 @@
-@media screen and (max-width: 600px) {
-  
-  #wants-index {
-    a, button, .listname_submit {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      outline: none;
-      &:hover {
-        color: black;
-      }
-    }
-
-    .card {
-      margin-bottom: 10px;
-    }
-    
-    .list_form {
-      // height: 50px;
-      .list_click, .list_click_consequence {
-        text-align: center !important;
-      }
-      
-      .list_btn {
-        width: 90%;
-        border: gray solid 1px;
-      }
-    }
-    .listname_form_box {
-      border-color: lightgray;
-      outline: none;
-
-      .listname_form {
-        width: 90% !important;
-        margin-right: 0px !important;
-      }
-
-      .listname_form_btn {
-        width: 40%;
-        border: gray 1px solid;
-        margin-top: 10px !important;
-      }
-    }
-
-    .name {
-      font-size: 13px;
-      font-weight: bold;
-      padding-left:0;
-      padding-right:0;
-    }
-    .address {
-      font-size: 12px;
-    }
-    .date {
-      color: gray;
-      font-size: 11px;
-      font-weight: bold;
-    }
-    .listname {
-      font-size: 12px;
-      height: 20px;
-    }
-    .caption {
-      font-size: 13px;
-      height: 20px;
-    }
-    .detail, .togo, .tonogo, .delete {
-      font-size: 12px;
-    }
-
-    .detail_btn, .to_no_go_btn, .to_go_btn, .delete_btn {
-      width: 40%;
-      border: gray 1px solid;
-      margin-bottom: 15px;
-    }
-    
-  }
-  
-  #wants-show {
-    .card {
-      margin: 0 auto;
-      margin-bottom: 15px;
-      .card-content {
-        margin: auto;
-
-        .card-item {
-          margin: 20px 0;
-        }
-
-        .name {
-          font-size: 16px;
-          font-weight: bold;
-        }
-
-        .address {
-          font-size: 14px;
-        }
-
-        .date {
-          color: gray;
-          font-size: 11px;
-          font-weight: bold;
-        }
-
-        a {
-          color: gray;
-          text-decoration: none;
-          &:hover {
-            color: black;
-          }
-        }
-
-        .go_or_nogo, .top_page, .delete {
-          padding: 0;
-          margin: 0;
-          margin-bottom: 15px;
-
-          .top_btn, .go_btn, .no_go_btn, .delete_btn {
-            font-size: 12px;
-            width: 90%;
-          }
-        }
-      }
-    }
-  }
-  
-}
-  
-// スマホ用レイアウト
-@media screen and (min-width: 599px) {
-  // 行きたいお店一覧
+@media screen and (min-width: 768px) {
+//////////////////////////////////////////////////////////////
   #wants-index {
     h3 {
       font-size: 2rem;
-      margin-bottom: 30px;
+      margin-bottom: 2rem;
     }
     .search-field {
       .search-base-btn-space {
         text-align: center !important;
         .search-base-btn {
           margin: 0 !important;
-          font-size: 1.3rem;
+          font-size: 0.8rem;
+        }
+      }
+      .search-space {
+        text-align: center !important;
+        .search-space-inner {
+          margin: 0 !important;
+          .search-form {
+            width: 200px;
+            margin-right: 2rem !important;
+          }
+          .search-btn {
+            margin: 0 !important;
+            width: 100px;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .want-field {
+      p {
+        margin: 0 !important;
+      }
+      .name-space {
+        margin-bottom: 0.8rem;
+        .name {
+          font-size: 0.8rem;
+        }
+      }
+      .address-space {
+        text-align: center !important;
+        margin: 0.8rem auto;
+        height: 40px;
+        .address {
+          font-size: 0.8rem;
+        }
+      }
+      .capcom-space {
+        width: 80%;
+        margin: 0.8rem auto;
+        .ttl {
+          font-size: 0.8rem;
+        }
+        .capcom {
+          font-size: 0.8rem;
+        }
+      }
+      .listname-space {
+        width: 80%;
+        margin: 0.8rem auto;
+        .ttl {
+          font-size: 0.8rem;
+        }
+        .listname {
+          font-size: 0.8rem;
+        }
+      }
+      .date-space {
+        width: 80%;
+        margin: 0.8rem auto;
+        .date {
+          font-size: 0.8rem;
+        }
+      }
+      .action-field {
+        margin: 0 !important;
+        .detail-space {
+          padding: 0;
+          .detail-btn {
+            font-size: 0.9rem;
+          }
+        }
+        .gone-space {
+          padding: 0;
+          .to-no-go-btn {
+            font-size: 0.9rem;
+          }
+          .to-go-btn {
+            font-size: 0.9rem;
+          }
+        }
+        .delete-space {
+          padding: 0;
+          .delete-btn {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+////////////////////////////////////////////////////////
+  #wants-show {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    p {
+      margin: 0 !important;
+    }
+    .row {
+      justify-content: center;
+    }
+    .info-area {
+      .title-space {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+      .info-field {
+        p {
+          display: inline-block;
+          font-size: 0.8rem;
+        }
+        .name-space {
+          margin: 0 !important;
+          margin-bottom: 0.8rem;
+          .name {
+            font-size: 1rem;
+          }
+        }
+        .card-item {
+          margin: 0 !important;
+          margin-bottom: 0.8rem !important;
+        }
+        .budget-space, .caption-space, .listname-space {
+          .ttl {
+            margin-right: 5px;
+          }
+        }
+        .date-space {
+          .date {
+            color: gray;
+            font-size: 0.7rem;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .action-area {
+      .to-top-btn-space {
+        .to-top-btn {
+        }
+      }
+      .to-go-or-no-go-btn-space {
+        .to-no-go-btn, .to-go-btn {
+        }
+
+      }
+      .delete-btn-space {
+        .delete-btn {
+        }
+      }
+      .btn {
+        margin: 0 0.8rem !important;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+
+// スマホ用レイアウト////////////////////////////////////////
+@media screen and (max-width: 767px) {
+
+  #wants-index {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .search-field {
+      .search-base-btn-space {
+        text-align: center !important;
+        .search-base-btn {
+          margin: 0 !important;
+          font-size: 0.8rem;
         }
       }
       .search-space {
@@ -163,66 +208,66 @@
         margin: 0 !important;
       }
       .name-space {
-        margin-bottom: 1rem;
+        margin-bottom: 0.8rem;
         .name {
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
       }
       .address-space {
         text-align: center !important;
-        margin: 1rem auto;
+        margin: 0.8rem auto;
         .address {
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
       }
       .capcom-space {
         width: 80%;
-        margin: 1rem auto;
+        margin: 0.8rem auto;
         .ttl {
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
         .capcom {
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
       }
       .listname-space {
         width: 80%;
-        margin: 1rem auto;
+        margin: 0.8rem auto;
         .ttl {
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
         .listname {
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
       }
       .date-space {
         width: 80%;
-        margin: 1rem auto;
+        margin: 0.8rem auto;
         .date {
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
       }
       .action-field {
         margin: 0 !important;
         .detail-space {
           .detail-btn {
-            font-size: 1.3rem;
+            font-size: 0.8rem;
             width: 150px;
           }
         }
         .gone-space {
           .to-no-go-btn {
-            font-size: 1.3rem;
+            font-size: 0.8rem;
             width: 150px;
           }
           .to-go-btn {
-            font-size: 1.3rem;
+            font-size: 0.8rem;
             width: 150px;
           }
         }
         .delete-space {
           .delete-btn {
-            font-size: 1.3rem;
+            font-size: 0.8rem;
             width: 150px;
           }
         }
@@ -231,36 +276,35 @@
   }
   
 
-  // 行きたいお店詳細
+//////////////////////////////////
   #wants-show {
     h3 {
       font-size: 2rem;
-      margin-bottom: 30px;
+      margin-bottom: 2rem;
     }
     p {
       margin: 0 !important;
     }
-
     .info-area {
       .title-space {
-        font-size: 1.3rem;
-        margin-bottom: 30px;
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
       }
       .info-field {
         p {
           display: inline-block;
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
         .name-space {
           margin: 0 !important;
-          margin-bottom: 1rem;
+          margin-bottom: 0.8rem;
           .name {
-            font-size: 1.3rem;
+            font-size: 0.8rem;
           }
         }
         .card-item {
           margin: 0 !important;
-          margin-bottom: 1rem !important;
+          margin-bottom: 0.8rem !important;
         }
         .budget-space, .caption-space, .listname-space {
           .ttl {
@@ -269,7 +313,6 @@
         }
       }
     }
-
     .action-area {
       .to-top-btn-space {
         padding: 0 !important;
@@ -282,19 +325,9 @@
       }
       .btn {
         width: 250px;
-        margin: 0 1rem !important;
+        margin: 0 0.8rem !important;
       }
     }
-
-
-
-
-
-
-
-
-
-
     .card {
       margin: 0 auto;
     }
@@ -323,11 +356,11 @@
       padding: 0;
     }
     .top, .go, .no_go, .delete {
-      font-size: 12px;
+      font-size: 0.8rem;
     }
     .date {
       color: gray;
-      font-size: 11px;
+      font-size: 0.7rem;
       font-weight: bold;
     }
   }

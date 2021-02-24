@@ -1,21 +1,21 @@
 h3
   p 行ったお店詳細
-div.row
-  div.col-lg-6.col-12.p-3.text-center.card.info_big_box.info-field
+div.row.p-2
+  div.col-lg-6.col-12.p-3.text-center.card.info-field
 
-    div.card-header.p-0
+    div.card-header
       p お店情報
 
-    div.card-content.info_box
+    div.card-content.info-space
       div.card-item.image-field
         - if @gone.images.attached?
-          div.row.mt-2.mb-2.justify-content-center
+          div.row.justify-content-center
             - @gone.images.each do |image|
-              div.col-lg-4.col-4.p-0.image-field-inner
+              div.col-lg-6.col-12.image-field-inner
                 = image_tag image, class: 'border image'
                 = form_with model: @gone, local: true, class: 'text-left' do |f|
                   = f.hidden_field :image_id, :value => image.id
-                  = f.button :type => 'submit',  class: 'btn bg-transparent submit' do
+                  = f.button :type => 'submit',  class: 'btn bg-transparent submit cancel-btn' do
                     <i class="far fa-times-circle"></i>
 
       div.card-item.fw-bold.name
@@ -59,10 +59,9 @@ div.row
             = link_to '削除', gone_path(@gone), method: :delete, class: 'btn btn-light delete_btn delete-btn'
 
 
-  div.col-lg-6.col-12.p-3.text-center.card.action_big_box.action-field
-
-    div.card-header.p-0.mb-2
-      p 行ったお店のコメント・写真の登録ができます
+  div.col-lg-6.col-12.p-3.text-center.card.action-field
+    div.card-header
+      p 行ったお店のコメント・写真登録
     div.card-content
       div.mb-2.update_form_box.update-field
         = form_with model: @gone, local: true do |f|
@@ -73,8 +72,8 @@ div.row
             = f.file_field :images, multiple: true, id: 'update_image', class: 'form-control-file update_file update-file'
           = f.submit "更新する", class: 'btn btn-light update_btn update-btn'
 
-    div.card-header.p-0.mb-2.mt-4
-      p 投稿用のキャプション・写真の登録ができます
+    div.card-header
+      p 投稿用のキャプション・写真登録
     div.card-content
       div.post_form.post-form-field
         = form_with model: Posted.new, local: true do |f|

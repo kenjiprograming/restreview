@@ -2,24 +2,24 @@ h3
   p 投稿詳細画面
 div.row.justify-content-center
   - if @posted.images.attached?
-    - @posted.images.each do |image|
-     div.col-lg-4.col-12.p-0.image-field
-       div.card.image-space
-          = image_tag image, class: "card-img-top image border p-1 image"
+    div.col-lg-4.col-12.p-0.image-field
+      - @posted.images.each do |image|
+        div.card.image-space.mb-1
+          = image_tag image, class: "border p-1 image"
 
-  div.col-lg-6.col-12.p-0
-    div.card.h-100
+  div.col-lg-6.col-12
+    div.card
       div.card-content
         div.card-text.border-bottom.email-space
           p.email = @posted.user.email
 
         div.card-text.name.name-space
-          = link_to @posted.name, @posted.url, target: :_blank, class: 'post_name name'
+          = link_to @posted.name, @posted.url, target: :_blank, class: 'name'
 
-        div.card-text.address.address-space
+        div.card-text.address-space
           p.address = @posted.address
 
-        div.card-text.caption.text-left.caption-space
+        div.card-text.text-left.caption-space
           span.email #{ @posted.user.email }
           p.caption  #{ @posted.caption }
         
@@ -27,15 +27,15 @@ div.row.justify-content-center
           div.row.action-field
             div.card-text.text-left.col-lg-1.col-12.like-space
               - if current_user.likes.find_by(posted_id: @posted.id)
-                = link_to posted_like_path(@posted, current_user), method: :delete, class: 'like unlike unlike-btn' do 
+                = link_to posted_like_path(@posted, current_user), method: :delete, class: 'unlike-btn' do 
                   <i class="fas fa-heart"></i>
                 end
               - else
-                = link_to posted_likes_path(@posted), method: :post, class: 'like like-btn' do 
+                = link_to posted_likes_path(@posted), method: :post, class: 'like-btn' do 
                   <i class="far fa-heart"></i>
                 end
 
-            div.card-text.heart.text-left.col-lg-2.col-12.heart-space
+            div.card-text.text-left.col-lg-2.col-12.heart-space
               p.heart <i class="far fa-heart"></i>
               p.length = @posted.likes.length
 
@@ -44,11 +44,11 @@ div.row.justify-content-center
 
             - if current_user == @posted.user
             div.card-text.col-lg-9.col-12.text-right.delete-space
-                = link_to "投稿を削除する", posted_path(@posted), method: :delete, class: 'btn btn-light delete delete-btn'
+                = link_to "投稿を削除する", posted_path(@posted), method: :delete, class: 'btn btn-light delete-btn'
 
             div.card-text.beliked-space
               p.border-bottom.title されたいいね一覧
               - @likes.each do |like|
-                div.be-liked.row.beliked-space-inner
-                  div.col-lg-6.col-12.text-left.p-0.inner-inner
+                div.row.beliked-space-inner
+                  div.col-lg-6.col-12.text-left.inner-inner
                     = link_to like.user.email, user_path(like.user_id), class: 'email-btn'

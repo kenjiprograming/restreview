@@ -1,6 +1,6 @@
 h3
    p お店詳細
-.row
+div.row
    div.col-lg-6.col-12.text-center.p-3.card.search-show-field
       div.card-header.p-0.search_show
          p お店の詳細
@@ -34,4 +34,4 @@ h3
                   = f.text_area :caption, :placeholder => "キャプション", class: 'want_caption form-control caption caption-form', id: 'want_caption'
                div.form-group.text-left.mb-2
                   = f.text_field :listname, :placeholder => "リストネーム（例: 渋谷カフェ、新宿ディナー)", class: 'list-name form-control list-name-form', id: 'list-name'
-               = f.submit "行きたいお店リストに追加する", class: 'btn btn-light submit add-list-btn'
+               = f.submit "行きたいお店リストに追加する", class: 'btn btn-light add-list-btn'

@@ -1,100 +1,4 @@
-@media screen and (max-width: 600px) {
-  #gurunabi-search {
-    a {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
-      }
-    }
-    .search_form_box {
-      max-height: 250px;
-      min-height: 200px;
-      margin-bottom: 10px;
-      .search_form {
-        margin: auto 0;
-
-        .align {
-          align-items: baseline;
-
-          .guru_submit {
-            margin-top:10px;
-            text-align: center;
-            .btn {
-              color: gray;
-              text-decoration: none;
-              font-size: 13px;
-              width: 40%;
-              &:hover {
-                color: black;
-              }
-            }
-          }
-          
-        }
-      }
-    }
-
-    .search_hits {
-      .rest_box {
-        margin: 0 auto;
-
-        a {
-          font-size: 15px;
-
-        }
-        .address {
-          font-size: 13px;
-
-        }
-      }
-    }
-  }
-
-  #gurunabi-show {
-    a {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
-      }
-    }
-
-    .search_show {
-      margin-bottom: 10px;
-    }
-
-    .address, .opentime, .holiday, .budget, .btn, .caption, .list-name {
-      font-size: 13px;
-      margin-bottom: 5px;
-    }
-
-    .rest_box {
-      margin: auto;
-
-      .name {
-        font-size: 15px;
-        margin-bottom: 10px;
-      }
-    }
-
-    .btn {
-      color: gray;
-      text-decoration: none;
-      border: 1px solid gray;
-      &:hover {
-        color: black;
-      }
-    }
-  }
-}
-
-
-
-// スマホ用レイアウト
-@media screen and (min-width: 599px) {
-
+@media screen and (min-width: 768px) {
   #gurunabi-search {
     h3 {
       font-size: 2rem;
@@ -112,20 +16,149 @@
       .card-content {
         .form-group {
           .label {
-            margin-bottom: 30px!important;
+            margin-bottom: 1rem !important;
             font-size: 1rem;
           }
           .name-form {
-            margin-bottom: 30px;
+            margin-bottom: 1rem ;
             width: 100%;
             font-size: 1rem;
           }
           .label {
-            margin-bottom: 30px!important;
+            margin-bottom: 1rem !important;
             font-size: 1rem;
           }
           .freeword-form {
+            margin-bottom: 2rem ;
+            width: 100%;
+            font-size: 1rem;
+          }
+          .search-btn-field {
+            .search-btn {
+              width: 100px;
+              margin-bottom: 1rem ;
+              font-size: 1rem;
+              color: gray;
+            }
+          }
+        }
+      }
+    }
+
+    .search-hits-field {
+      .card-header {
+        font-size: 1rem;
+        margin-bottom: 1rem  !important;
+
+        p {
+          margin-top: 1rem;
+        }
+      }
+      .card-content {
+        .rest-field {
+          margin-bottom: 0.8rem  !important;
+          .card-content-2 {
+            .name {
+              font-size: 0.8rem;
+            }
+            .address {
+              font-size: 0.7rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #gurunabi-show {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem ;
+    }
+    .search-show-field {
+      .card-header {
+        font-size: 1rem;
+        margin-bottom: 1rem ;
+        p {
+          margin-top: 1rem;
+        }
+      }
+      .card-content {
+        .card-item {
+          font-size: 1rem;
+          margin-bottom: 1rem ;
+        }
+      }
+    }
+    .action-field {
+      .card-header {
+        font-size: 1rem;
+        margin-bottom: 30px !important;
+
+        p {
+          margin-top: 1rem;
+        }
+      }
+      .card-content {
+        .form-group {
+          .caption-form {
             margin-bottom: 30px;
+            height: 100px;
+            width: 100%;
+            font-size: 1rem;
+          }
+          .list-name-form {
+            margin-bottom: 30px;
+            width: 100%;
+            font-size: 1rem;
+          }
+        }
+        .add-list-btn {
+          width: 200px;
+          font-size: 0.8rem;
+          color: gray;
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+
+//////////////////////////////////////////////////////////////////////////
+// スマホ用レイアウト/////////////////////////////////////////////////////
+@media screen and (max-width: 766px) {
+
+  #gurunabi-search {
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem ;
+    }
+    .search-form-field {
+      .card-header {
+        font-size: 1rem;
+        margin-bottom: 1rem ;
+        p {
+          margin-top: 1rem;
+        }
+      }
+      .card-content {
+        .form-group {
+          .label {
+            margin-bottom: 1rem !important;
+            font-size: 1rem;
+          }
+          .name-form {
+            margin-bottom: 1rem ;
+            width: 100%;
+            font-size: 1rem;
+          }
+          .label {
+            margin-bottom: 1rem !important;
+            font-size: 1rem;
+          }
+          .freeword-form {
+            margin-bottom: 1rem ;
             width: 100%;
             font-size: 1rem;
           }
@@ -133,7 +166,7 @@
             text-align: center;
             .search-btn {
               width: 40%;
-              margin-bottom: 30px;
+              margin-bottom: 1rem ;
               font-size: 1.4rem;
               color: gray;
             }
@@ -145,20 +178,24 @@
     .search-hits-field {
       .card-header {
         font-size: 1rem;
-        margin-bottom: 30px !important;
-
+        margin-bottom: 1rem;
         p {
           margin-top: 1rem;
         }
       }
       .card-content {
         .rest-field {
-          margin-bottom: 30px !important;
+          margin-bottom: 1rem !important;
+
           .card-content-2 {
-            .name {
-              font-size: 1rem;
+            .name-space {
+              height: 50px;
+              .name {
+                font-size: 1rem;
+              }
             }
             .address {
+              height: 50px;
               font-size: 1rem;
             }
           }
@@ -171,12 +208,12 @@
   #gurunabi-show {
     h3 {
       font-size: 2rem;
-      margin-bottom: 30px;
+      margin-bottom: 1rem ;
     }
     .search-show-field {
       .card-header {
         font-size: 1rem;
-        margin-bottom: 30px;
+        margin-bottom: 1rem ;
 
         p {
           margin-top: 1rem;
@@ -186,7 +223,7 @@
 
         .card-item {
           font-size: 1rem;
-          margin-bottom: 30px;
+          margin-bottom: 1rem ;
         }
       }
     }
@@ -221,6 +258,5 @@
         }
       }
     }
-
   }
 }

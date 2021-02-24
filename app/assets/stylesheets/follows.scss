@@ -1,38 +1,28 @@
-@media screen and (max-width: 600px) {
+// PC用レイアウト///////////
+@media screen and (min-width: 768px) {  
+
   #follows-index {
-    .card-header {
-      margin-bottom: 20px;
-    }
-    a {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
+    .follow-ttl {
+      margin-bottom: 2rem;
+      p {
+        font-size: 1.3rem;
+        color: gray;
+        margin: 0;
       }
     }
-    .follow_box {
-      width: 100% !important;
-      margin-bottom: 20px !important;
-      height: 40px;
-  
-      .card-content {
-        margin: auto;
-      }
-  
-      .email_consequence {
-        font-size: 17px;
-      }
+    .follow-field {
+      margin: 5px auto;
     }
   }
 }
 
 
 
-// スマホ用レイアウト
-@media screen and (min-width: 599px) {
+// スマホ用レイアウト///////////
+@media screen and (max-width: 767px) {
   #follows-index {
     .follow-ttl {
-      margin-bottom: 20px;
+      margin-bottom: 2rem;
 
       p {
         font-size: 1.5rem;

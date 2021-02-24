@@ -1,27 +1,27 @@
-h3.mb-5
-  p ユーザー検索
+h3
+   p ユーザー検索
 div.row
-   div.card.col-lg-6.col-12.p-3.text-center.search_form_box.search-area
-      div.card-header.p-0.mb-2.title-space
+   div.card.col-lg-6.col-12.text-center.search-area
+      div.card-header.title-space
          p.title ユーザー検索ができます
 
-      div.card-content.search_form_box.search-field
+      div.card-content.search-field
          = search_form_for @q, url: user_index_path do |f|
-            div.form-group.mb-2.search-space
-               = f.label :email, "emailを入力してください（最低1文字）", class: 'label mb-2 label'
+            div.form-group.search-space
+               = f.label :email, "emailを入力してください（最低1文字）", class: 'label'
                br
                div.search-space-inner
-                  = f.search_field :email_cont, id: "form_controll", class: 'form-control-sm mr-2 search_field search-form'
-                  = f.submit "検索", id: "submit", class: 'search_submit_btn btn btn-light ml-2 search-btn'
+                  = f.search_field :email_cont, id: "form_controll", class: 'form-control-sm search-form'
+                  = f.submit "検索", id: "submit", class: 'btn btn-light search-btn'
 
 
-   div.card.col-lg-6.col-12.p-3.text-center.hit-area
-      div.card-header.p-0.mb-2.title-space
+   div.card.col-lg-6.col-12.text-center.hit-area
+      div.card-header.title-space
          p.title 検索結果が表示されます
       div.card-content.hit-field
          - if params[:q]
          - @users.each do |user|
-            div.card.mb-1.w-75.email_box.hit-space
+            div.card.hit-space
                #user.card-content.email_consequences
-               = link_to user.email, user_path(user), class: 'email email-btn'
+               = link_to user.email, user_path(user), class: 'email-btn'
 

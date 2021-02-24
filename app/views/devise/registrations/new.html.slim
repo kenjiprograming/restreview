@@ -1,29 +1,29 @@
-h3.mt-1.mb-3
-  p 新規登録
+h3
+   p 新規登録
 
-.card.col-12.mx-auto.mt-5
+div.card.col-12.mx-auto
+   div.card-body
+      = render "devise/shared/error_messages", resource: resource
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+         div.form-group.email-form-space
+            = f.label :email, class: 'mb-2 label'
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control mb-2 email-form'
 
-  div.card-body
-    = render "devise/shared/error_messages", resource: resource
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-     div.form-group
-        = f.label :email, class: 'mb-2 label'
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control mb-2 email-form'
+         div.form-group.password-form-space
+            = f.label :password, class: 'mb-2 label'
+            - if @minimum_password_length
+               em
+               | (
+               = @minimum_password_length
+               | 文字以上)
+            = f.password_field :password, autocomplete: "new-password", class: 'form-control mb-2 password-form'
 
-     div.form-group
-        = f.label :password, class: 'mb-2 label'
-        - if @minimum_password_length
-          em
-            | (
-            = @minimum_password_length
-            | 文字以上)
-        = f.password_field :password, autocomplete: "new-password", class: 'form-control mb-2 password-form'
+         div.field.confirm-field.password-form-space
+            = f.label :password_confirmation, class: 'mb-2 label'
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control mb-2 password-form'
 
-     div.field.confirm-field
-        = f.label :password_confirmation, class: 'mb-2 label'
-        = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control mb-2 password-form'
+         div.actions.registration-btn-field.registration-btn-space
+            = f.submit "新規登録", class: 'btn btn-light mb-3 registration-btn'
+         
 
-     div.actions.registration-btn-field
-        = f.submit "新規登録", class: 'btn btn-light mb-3 registration-btn'
-        
-    = render "devise/shared/links"
+      = render "devise/shared/links"
