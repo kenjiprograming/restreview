@@ -12,10 +12,13 @@
       }
     }
     .image-space {
-      height: 260px;
+      height: 280px;
       .image-space-inner {
         display: inline-block;
+        width: 100%;
         .image {
+          height: 250px;
+          width: 100%;
         }
       }
     }
