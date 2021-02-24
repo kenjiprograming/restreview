@@ -2,12 +2,12 @@ h3
   p 投稿詳細画面
 div.row.justify-content-center
   - if @posted.images.attached?
-    div.col-lg-4.col-12.p-0.image-field
+    div.col-lg-4.col-12.pl-2.pr-2.image-field
       - @posted.images.each do |image|
         div.card.image-space.mb-1
           = image_tag image, class: "border p-1 image"
 
-  div.col-lg-6.col-12
+  div.col-lg-6.col-12.pl-2.pr-2
     div.card
       div.card-content
         div.card-text.border-bottom.email-space

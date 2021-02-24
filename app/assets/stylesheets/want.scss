@@ -170,7 +170,7 @@
   }
 }
 
-
+/////////////////////////////////////////////////////////////
 // スマホ用レイアウト////////////////////////////////////////
 @media screen and (max-width: 767px) {
 
@@ -192,17 +192,17 @@
         .search-space-inner {
           margin: 0 !important;
           .search-form {
-            width: 200px;
-            margin-right: 2rem !important;
+            width: 150px;
+            margin-bottom: 1rem;
           }
           .search-btn {
             margin: 0 !important;
-            width: 100px;
+            width: 80px;
+            font-size: 0.8rem;
           }
         }
       }
     }
-
     .want-field {
       p {
         margin: 0 !important;
@@ -252,23 +252,23 @@
         .detail-space {
           .detail-btn {
             font-size: 0.8rem;
-            width: 150px;
+            width: 100px;
           }
         }
         .gone-space {
           .to-no-go-btn {
             font-size: 0.8rem;
-            width: 150px;
+            width: 100px;
           }
           .to-go-btn {
             font-size: 0.8rem;
-            width: 150px;
+            width: 100px;
           }
         }
         .delete-space {
           .delete-btn {
             font-size: 0.8rem;
-            width: 150px;
+            width: 100px;
           }
         }
       }
@@ -316,47 +316,26 @@
     .action-area {
       .to-top-btn-space {
         padding: 0 !important;
+        .to-top-btn {
+          font-size: 0.8rem;
+          width: 100px;
+          margin-bottom: 0 !important;
+        }
       }
       .to-go-or-no-go-btn-space {
-
+        .to-not-go-btn, .to-go-btn {
+          font-size: 0.8rem;
+          width: 100px;
+          margin-bottom: 0 !important;
+        }
       }
       .delete-btn-space {
-
+        .delete-btn {
+          font-size: 0.8rem;
+          width: 100px;
+          margin-bottom: 0 !important;
+        }
       }
-      .btn {
-        width: 250px;
-        margin: 0 0.8rem !important;
-      }
-    }
-    .card {
-      margin: 0 auto;
-    }
-    .card-item {
-      margin: 20px 0;
-    }
-    .name {
-      font-size: 16px;
-      font-weight: bold;
-    }
-    .address {
-      font-size: 14px;
-    }
-    a {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
-      }
-    }
-    .card-content {
-      margin: auto;
-    }
-    .go_or_nogo {
-      padding: 0;
-    }
-    .top, .go, .no_go, .delete {
-      font-size: 0.8rem;
     }
     .date {
       color: gray;
