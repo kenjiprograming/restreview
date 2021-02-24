@@ -1,23 +1,27 @@
-h3.mt-1.mb-3
-  | ログイン
-.card.col-sm-5.mx-auto.mt-5
-  .card-body
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .form-group
-        = f.label :email, class: "mb-2"
-        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control mb-2'
-      .form-group
-        = f.label :password, class: "mb-2"
-        = f.password_field :password, autocomplete: "current-password", class: 'form-control mb-2'
-      - if devise_mapping.rememberable?
-        .field[style="margin-bottom: 10px;"]
-          = f.check_box :remember_me
-          = f.label :remember_me, class: 'remember'
-      .actions[style="margin-bottom: 10px;"]
-      = f.submit "ログイン", class: 'btn btn-light login-btn mb-3'
-    = render "devise/shared/links"
+h3
+   p ログイン
 
+div.card.col-12.mx-auto
+   div.card-body
+      = render "devise/shared/error_messages", resource: resource
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
 
+         div.form-group.email-form-space
+            = f.label :email, class: "label mb-2"
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control email-form'
 
- 
+         div.form-group.password-form-space
+            = f.label :password, class: "label mb-2"
+            = f.password_field :password, autocomplete: "current-password", class: 'form-control password-form'
+
+         - if devise_mapping.rememberable?
+         div.field.check-box-field.check-box-space
+            = f.check_box :remember_me, class: 'check-box'
+            = f.label :remember_me, class: 'label'
+
+         div.login-btn-field.actions.login-btn-space
+            = f.submit "ログイン", class: 'btn btn-light login-btn'
+         
+      = render "devise/shared/links"
+
 

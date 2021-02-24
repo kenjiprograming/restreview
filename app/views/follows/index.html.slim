@@ -1,22 +1,24 @@
-.row
-  .col-lg-6.col-12.text-center
-    .mb-2.p-1
-      .card-header.fw-bold.follow_big_box
-        | フォロー
+div.row
+  div.col-lg-6.col-12.text-center
+    div.mb-2.p-1
+      div.card-header.follow-ttl
+        p フォロー
+
       - @followings.each do |follow|
-        .card.w-75.follow_box
-          .card-content
-            .card-item
+        div.card.w-75.follow-field
+          div.card-content
+            div.card-item
               = link_to follow.email, user_path(follow), class: "card-link email_consequence"
       
-  .col-lg-6.col-12.text-center
-    .mb-2.p-1
-      .card-header.fw-bold.follow_big_box
-        | フォロワー
+  div.col-lg-6.col-12.text-center
+    div.mb-2.p-1
+      div.card-header.follow-ttl
+        p フォロワー
+        
       - @followers.each do |follower|
-        .card.w-75.follow_box
-          .card-content
-            .card-item
+        div.card.w-75.follow-field
+          div.card-content
+            div.card-item
               = link_to follower.email, user_path(follower), class: "card-link email_consequence", id: 'card-link'
 
 

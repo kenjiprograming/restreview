@@ -1,42 +1,48 @@
 doctype html
 html
+
   head
     title
       | RestReview
     = csrf_meta_tags
     = csp_meta_tag
+    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" 
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  body id="#{controller.controller_name}-#{controller.action_name}"
-    nav.navbar.navbar-expand-lg.navbar-light.bg-light
-      = link_to root_path, class: 'nav-link logo navbar-brand' do 
-        | RestReview
-        span.logo_sub
-        |  〜あのお店を忘れない〜
 
-      button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+
+  body id="#{controller.controller_name}-#{controller.action_name}"
+
+    nav.navbar.navbar-expand-md.navbar-light.bg-light
+      = link_to root_path, class: 'nav-link navbar-brand logo-space pl-2' do 
+        p.logo RestReview
+
+      button.navbar-toggler.humberger-logo.mr-2 type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
         span.navbar-toggler-icon
 
-      div#navbarSupportedContent.collapse.navbar-collapse.justify-content-end
+      div#navbarSupportedContent.collapse.navbar-collapse.justify-content-end.humberger-inner
         ul.navbar-nav.mr-auto
           - if current_user
-            li.nav-item.active
-              = link_to "お店を検索する", gurunabi_search_path, class: "nav-link"
-            li.nav-item
-              = link_to "行きたいお店", wants_path, class: "nav-link"
-            li.nav-item
-              = link_to "行ったお店", gones_path, class: "nav-link"
+            li.nav-item.active.search-nav-btn-space
+              = link_to "お店を検索する", gurunabi_search_path, class: "nav-link search-btn"
+            li.nav-item.want-nav-btn-space
+              = link_to "行きたいお店", wants_path, class: "nav-link want-btn"
+            li.nav-item.gone-nav-btn-space
+              = link_to "行ったお店", gones_path, class: "nav-link gone-btn"
+
         ul.navbar-nav
           - if current_user
-            li.nav-item
-              = link_to current_user.email, user_path(current_user), class: "nav-link", id: 'mypage'
-            li.nav-item
-              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"
+            li.nav-item.email-nav-btn-space
+              = link_to current_user.email, user_path(current_user), class: "nav-link email-btn", id: 'mypage'
+            li.nav-item.logout-nav-btn-space
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link logout-btn"
+
           - else
-            li.nav-item
-              = link_to "新規登録", new_user_registration_path, class: "nav-link"
-            li.nav-item
-              = link_to "ログイン", new_user_session_path, class: "nav-link"
+            li.nav-item.signup-nav-btn-space
+              = link_to "新規登録", new_user_registration_path, class: "nav-link signup-btn"
+            li.nav-item.login-nav-btn-space
+              = link_to "ログイン", new_user_session_path, class: "nav-link login-btn"
+
 
     div.container.text-center.mt-4
       - if notice
@@ -45,4 +51,5 @@ html
       - if alert
         p.text-danger
           = alert
+          
       = yield

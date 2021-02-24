@@ -18,122 +18,137 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+// PC用レイアウト /////////////////////////////////////
+@media screen and (min-width: 768px) {
 
-
-@media screen and (max-width: 767px) {
-
-  nav {
-    .logo {
-      font-size: 16px;
-
-      .logo_sub {
-        font-size: 9px;
-
+  html {
+    font-size: 16px;
+  }
+  
+  a, .btn {
+    color: gray !important;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0.5rem;
+      &:hover {
+        color: black !important;
       }
     }
+
+  p {
+    margin: 0 !important;
+  }
+
+  nav {
+    .logo-space {
+      margin-bottom: 0 !important;
+      padding-bottom: 0;
+      .logo {
+        font-size: 1.5rem;
+      }
+    }
+  
     .nav-item {
       margin: auto;
-
-    }
-    .navbar-brand {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
+      .nav-link {
+        padding-bottom: 0;
       }
     }
   }
 
-  #sessions-new, #registrations-new, #passwords-new, #confirmations-new, #registrations-create, #confirmations-create, #passwords-edit {
-    font-size: 14px;
+  .error_title {
+    font-size: 1rem;
+    color: red;
 
-    .btn {
-      color: gray;
-      text-decoration: none;
-      width: 40%;
-      font-size: 15px;
-      border: 1px solid gray;
+  }
 
-      &:hover {
-        color: black;
-      }
-    }
-    .field {
-    margin-bottom: 15px;
-    }
-    .actions {
-      margin-bottom: 15px;
-    }
-    
-    .error_title {
-      font-size: 15px;
-      color: red;
-
-    }
-    .error_message {
-      list-style: none;
-      font-size: 15px;
-      color: red;
-
-    }
-    .devise_btn {
-      font-size: 15px;
-      text-decoration: none;
-      display: block;
-      width: 90%;
-      background: #f8f9fa;
-      margin: auto;
-    }
+  .error_message {
+    list-style: none;
+    font-size: 1rem;
+    color: red;
   }
 }
 
-@media screen and (min-width: 768px) {
 
-  a {
-    color: gray;
-    text-decoration: none;
-    font-size: 13px;
 
+
+// スマホ用レイアウト ///////////////////////////////////
+@media screen and (max-width: 767px) {
+
+  html {
+    font-size: 16px;
+  }
+  .container {
+    max-width: 590px !important;
+  }
+
+  a, .btn {
+  color: gray !important;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
     &:hover {
-      color: black;
-
+      color: black !important;
     }
+  }
+  p {
+    margin: 0 !important;
+  }
+  h3 {
+    font-size: 1.5rem !important;
   }
 
   nav {
-    .logo {
-      font-size: 16px;
-
-      .logo_sub {
-        font-size: 9px;
-
+    .logo-space {
+      margin-bottom: 0 !important;
+      padding-bottom: 0;
+      .logo {
+        font-size: 1.5rem !important;
+        color: gray !important;
+        margin: auto 0 !important;
+        p {
+          margin: auto 0;
+        }
       }
     }
-    .nav-item {
-      margin: auto;
+    
+    .humberger-logo {
+      width: 60px;
+      height: 40px;
+      margin-right: 20px;
 
+      .navbar-toggler-icon {
+        width: 30px;
+      }
+    }
+
+    .humberger-inner {
+      .navbar-nav {
+        text-align: center;
+
+        .navbar-item {
+          margin: auto;
+          height: 60px;
+
+          .nav-link {
+            font-size: 2rem;
+          }
+        }
+      }
     }
   }
 
-  #sessions-new, #registrations-new, #passwords-new, #confirmations-new, #registrations-create, #confirmations-create, #passwords-edit {
-    font-size: 14px;
-    .btn {
-      color: gray;
-      text-decoration: none;
-      font-size: 14px;
-      &:hover {
-        color: black;
-      }
-    }
-    .error_title {
-      font-size: 15px;
-      color: red;
-    }
-    .error_message {
-      list-style: none;
-      font-size: 15px;
-      color: red;
-    }
+  .error_title {
+    font-size: 1rem;
+    color: red;
   }
+
+  .error_message {
+    list-style: none;
+    font-size: 1rem;
+    color: red;
+  }
+
 }
 

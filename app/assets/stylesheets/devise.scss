@@ -1,0 +1,280 @@
+// PC用レイアウトここから//////////////////////////////
+@media screen and (min-width: 768px) {
+
+  #sessions-new,
+  #registrations-new,
+  #passwords-new,
+  #confirmations-new,
+  #registrations-create,
+  #confirmations-create,
+  #passwords-edit {
+
+    h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      margin-bottom: 2rem;
+      .email-form {
+        width: 480px;
+        height: 40px;
+        margin: 0 auto;
+      }
+      .password-form {
+        width: 480px;
+        height: 40px;
+        margin: 0 auto;
+      }
+    }
+    .password-form-space {
+      margin-bottom: 2rem;
+      .password-form {
+        width: 480px;
+        height: 40px;
+        margin: 0 auto;
+      }
+    }
+    .check-box-space {
+      margin-bottom: 2rem;
+    }
+    .login-btn-space {
+      margin-bottom: 2rem;
+    }
+    .registration-btn-space {
+      margin-bottom: 2rem;
+    }
+    .confirmation-form-space {
+      margin-bottom: 2rem;
+      .email-form {
+        width: 480px;
+        height: 40px;
+        margin: 0 auto;
+      }
+    }
+    .confirmation-btn-space {
+      margin-bottom: 2rem;
+    }
+    .forget-email-space {
+      margin-bottom: 2rem;
+      .forget-email-form {
+        width: 480px;
+        height: 40px;
+        margin: 0 auto;
+      }
+    }
+    .forget-btn-space {
+      margin-bottom: 2rem;
+    }
+
+    .devise-btn {
+      display: inline-block;
+      font-size: 1rem;
+      text-decoration: underline;
+      padding: 0;
+      margin: 5px;
+    }
+    .devise_btn {
+      display: inline-block;
+      font-size: 1rem;
+      text-decoration: underline;
+      padding: 0;
+      margin: 5px;
+    }
+
+  }
+}
+
+///////////////////////////////////////////////////////////
+// スマホ用レイアウトここから//////////////////////////////
+@media screen and (max-width: 767px) {
+
+  // 共通項
+  #sessions-new,
+  #registrations-new,
+  #passwords-new,
+  #confirmations-new,
+  #registrations-create,
+  #confirmations-create,
+  #passwords-edit {
+
+    .devise_btn {
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      font-size: 1rem;
+      text-decoration: underline;
+    }
+
+  }
+
+
+  #sessions-new {
+    h3 {
+      font-size: 1.5rem;
+    }
+    .form-group {
+      margin-bottom: 2rem;
+
+      .label {
+        margin-bottom: 2rem !important;
+        font-size: 1rem;
+      }
+      .email-from {
+        height: 48px;
+      }
+      .password-form {
+        height: 48px;
+      }
+    }
+    .check-box-field {
+      margin-bottom: 2rem;
+
+      .check-box {
+        transform: scale(1.5);
+        margin-right: 2rem;
+      }
+      .label {
+        margin-bottom: 2rem!important;
+        font-size: 1rem;
+      }
+    }
+    .login-btn-field {
+      margin-bottom: 1rem;
+      .login-btn {
+      }
+    }
+
+  }
+
+
+  #registrations-new {
+    h3 {
+      font-size: 1.5rem;
+    }
+    .form-group {
+      margin-bottom: 2rem;
+
+      .label{
+        margin-bottom: 2rem!important;
+        font-size: 1rem;
+      }
+      .email-from {
+        height: 48px;
+      }
+      .password-form {
+        height: 48px;
+      }
+    }
+
+    .confirm-field {
+      margin-bottom: 50px !important;
+
+      .label {
+        margin-bottom: 2rem!important;
+        font-size: 1rem;
+      }
+      .password-form {
+        height: 48px;
+      }
+    }
+
+    .registration-btn-field {
+      margin-bottom: 10px;
+
+      .registration-btn {
+
+      }
+    }
+  }
+
+  #passwords-new {
+    h3 {
+      font-size: 2rem;
+    }
+    .forget-email-field {
+      margin-bottom: 50px !important;
+
+      .label {
+        margin-bottom: 2rem!important;
+        font-size: 1rem;
+      }
+      .forget-email-form {
+        height: 48px;
+      }
+
+    }
+    .forget-btn-field {
+      margin-bottom: 10px;
+
+      .forget-btn {
+
+      }
+    }
+  }
+
+  #confirmations-new {
+    h3 {
+      font-size: 2rem;
+    }
+    .confirmation-email-field {
+      margin-bottom: 50px !important;
+
+      .label {
+        margin-bottom: 2rem!important;
+        font-size: 1rem;
+      }
+      .confirmation-email-form {
+        height: 48px;
+      }
+
+    }
+    .confirmation-btn-field {
+      margin-bottom: 10px;
+
+      .confirmation-btn {
+
+      }
+    }
+  }
+  // この2つは登録した時にしか現れないから、その時に修正する
+  #registrations-create,
+  #confirmations-create {
+    h3 {
+      font-size: 2rem;
+    }
+    .form-group {
+      margin-bottom: 2rem;
+
+      .label{
+        margin-bottom: 2rem!important;
+        font-size: 1rem;
+      }
+      .email {
+        height: 48px;
+      }
+      .password {
+        height: 48px;
+      }
+    }
+
+    .field {
+      margin-bottom: 50px !important;
+
+      .label {
+        margin-bottom: 2rem!important;
+        font-size: 1rem;
+      }
+      .password {
+        height: 48px;
+      }
+    }
+
+    // .field {
+    //   margin-bottom: 10px;
+
+    //   .registration-btn {
+
+    //   }
+    // }
+  }
+  // #passwords-edit
+}

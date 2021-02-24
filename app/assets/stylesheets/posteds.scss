@@ -1,84 +1,354 @@
-#posteds-index {
-  .posted-box {
-    // margin-left: auto;
-    // margin-right: auto;
-  }
-  .card-text {
-    color: grey;
-  }
-  .card-title {
-    margin: 0;
-  }
-  .date, .like, .heart {
-    font-size: 12px;
-  }
-  .unlike{
-    color: #ff004c;
-  }
-  .image {
-    width: 100%;
-    height: 400px;
-  }
-  .caption {
-    font-size: 12px;
-    span {
-      font-weight: bold;
+// PC用レイアウト/////////////////
+@media screen and (min-width: 768px) {
+
+  #posteds-index {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .card-header {
+      .email {
+        font-size: 1.1rem !important;
+      }
+    }
+    .image-space {
+      height: 260px;
+      .image-space-inner {
+        display: inline-block;
+        .image {
+        }
+      }
+    }
+    .card-body {
+      .title-field {
+        margin-bottom: 2rem !important;
+        .title {
+          font-size: 1.1rem;
+          font-weight: bold !important;
+          padding-left: 0 !important;
+        }
+      }
+      .caption-field {
+        margin-bottom: 2rem;
+        span {
+          font-size: 1rem;
+          color: gray;
+          margin-right: 5px;
+        }
+        p {
+          display: inline-block;
+        }
+      }
+      .heart-field {
+        margin-bottom: 2rem;
+        p {
+          display: inline-block;
+        }
+        .heart {
+          margin-right: 5px !important;
+        }
+      }
+      .row-field {
+        margin-bottom: 2rem;
+        .left-space {
+          .unlike-btn {
+            padding-left: 0;
+          }
+          .like-btn {
+            padding-left: 0;
+          }
+        }
+        .right-space {
+          color: gray;
+          font-size: 1rem;
+        }
+      }
     }
   }
- a {
-    color: gray;
-    text-decoration: none;
-    &:hover {
-      color: black;
+
+////////////////////////////////////////////////////////
+  #posteds-show {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin: 0;
+    }
+    .image-field {
+      .image-sapce {
+        .image {
+
+        }
+      }
+    }
+    .email-space {
+      margin-bottom: 1rem;
+      padding: 0.5rem auto;
+      .email {
+        font-size: 1.3rem;
+      }
+    }
+    .name-space {
+      margin-bottom: 1rem;
+      .name {
+        font-size: 1.2rem !important;
+      }
+    }
+    .address-space {
+      margin-bottom: 1rem;
+      .address {
+        font-size: 1rem;
+      }
+    }
+    .caption-space {
+      margin-bottom: 1rem;
+      padding-left: 12px;
+        p {
+          display: inline-block;
+          font-size: 0.8rem;
+        }
+        .email {
+          color: gray;
+          margin-right: 5px;
+          font-size: 0.8rem;
+          font-weight: bold;
+        }
+        .caption {
+
+        }
+    }
+
+    .action-field {
+      margin: 0;
+      .like-space {
+        margin-bottom: 1rem;
+        .unlike-btn {
+
+        }
+        .like-btn {
+
+        }
+      }
+      .heart-space {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        p {
+          display: inline-block;
+        }
+        .heart {
+          margin-right: 5px !important;
+        }
+        .length {
+
+        }
+      }
+      .date-space {
+        margin-bottom: 2rem;
+        .date {
+          font-size: 1rem;
+          color: gray;
+        }
+      }
+      .delete-space {
+        margin-bottom: 2rem;
+        .delete-btn {
+          width: 200px;
+          font-size: 0.9rem;
+          margin: 0 !important;
+        }
+      }
+      .beliked-space {
+        margin-bottom: 1rem;
+        .title {
+          font-size: 1.3rem;
+          border-top: 1px solid #dee2e6 !important;
+          margin-bottom: 1rem;
+        }
+        .beliked-space-inner {
+          .inner-inner {
+            text-align: center !important;
+            margin: 1rem;
+            .email-btn {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
     }
   }
 }
 
-#posteds-show {
- a {
-    color: gray;
-    text-decoration: none;
-    &:hover {
-      color: black;
+
+//////////////////////////////////////////////////////
+// スマホ用レイアウト////////////////////////
+@media screen and (max-width: 767px) {
+
+  #posteds-index {
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    .card-header {
+      .email {
+        font-size: 1.3rem !important;
+      }
+    }
+    .card-body {
+      .title-field {
+        margin-bottom: 2rem !important;
+        text-align: center !important;
+        .title {
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+      }
+      .caption-field {
+        margin-bottom: 2rem;
+        span {
+          font-size: 1rem;
+          color: gray;
+          margin-right: 5px;
+        }
+        p {
+          display: inline-block;
+        }
+      }
+      .heart-field {
+        margin-bottom: 2rem;
+        p {
+          display: inline-block;
+        }
+        .heart {
+          margin-right: 5px !important;
+        }
+      }
+      .row-field {
+        margin-bottom: 2rem;
+        .left-space {
+          .unlike-btn {
+
+          }
+          .like-btn {
+
+          }
+        }
+        .right-space {
+          color: gray;
+          font-size: 1rem;
+        }
+      }
     }
   }
-  .card {
-    margin: 5px;
-  }
-  .card-content {
-    padding: 40px;
-  }
-  .card-text {
-    font-size: 14px;
-    color: grey;
-    text-align: left;
-    margin-bottom: 20px;
-  }
-  .post_name {
-    font-size: 16px;
-    text-decoration: none;
-  }
-  .caption {
-    margin-bottom: 80px;
-    span {
-      font-weight: bold;
+
+
+  #posteds-show {
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
-  }
-  .unlike{
-    color: #ff004c;
-  }
-  .delete {
-    color: gray;
-    &:hover {
-      color: black;
+    p {
+      margin: 0;
     }
-  }
-  .be-liked {
-    margin: 10px 0;
-  }
-  .image {
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
+    .image-field {
+      .image-sapce {
+        .image {
+
+        }
+      }
+    }
+    .email-space {
+      margin-bottom: 1rem;
+      .email {
+        font-size: 1rem;
+        // margin-top: 1rem;
+      }
+    }
+    .name-space {
+      margin-bottom: 1rem;
+      .name {
+        font-size: 1.5rem !important;
+      }
+    }
+    .address-space {
+      margin-bottom: 1rem;
+      .address {
+        font-size: 1rem;
+      }
+    }
+    .caption-space {
+      margin-bottom: 1rem;
+      padding-left: 12px;
+        p {
+          display: inline-block;
+          font-size: 1rem;
+        }
+        .email {
+          color: gray;
+          font-weight: bold;
+          margin-right: 5px;
+        }
+        .caption {
+
+        }
+    }
+
+    .action-field {
+      margin: 0;
+      .like-space {
+        margin-bottom: 1rem;
+        .unlike-btn {
+
+        }
+        .like-btn {
+
+        }
+      }
+      .heart-space {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        p {
+          display: inline-block;
+        }
+        .heart {
+          margin-right: 5px;
+        }
+        .length {
+
+        }
+      }
+      .date-space {
+        margin-bottom: 2rem;
+        .date {
+          font-size: 1rem;
+          color: gray;
+        }
+      }
+      .delete-space {
+        margin-bottom: 2rem;
+        .delete-btn {
+          width: 200px;
+          font-size: 1.2rem;
+          margin: 0 !important;
+        }
+      }
+      .beliked-space {
+        margin-bottom: 1rem;
+        .title {
+          font-size: 1.3rem;
+          border-top: 1px solid #dee2e6 !important;
+          margin-bottom: 1rem;
+        }
+        .beliked-space-inner {
+          .inner-inner {
+            text-align: center !important;
+            margin-bottom: 1.8rem;
+            .email-btn {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
   }
 }

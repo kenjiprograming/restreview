@@ -1,71 +1,87 @@
 h3
-  | 行ったお店詳細
-div.row
-  div.col-lg-6.col-12.p-3.text-center.card.info_big_box
-    div.card-header.p-0
-      | お店情報
-    div.card-content.info_box
-      div.card-item.big_image_box
+  p 行ったお店詳細
+div.row.p-2
+  div.col-lg-6.col-12.p-3.text-center.card.info-field
+
+    div.card-header
+      p お店情報
+
+    div.card-content.info-space
+      div.card-item.image-field
         - if @gone.images.attached?
-          div.row.mt-2.mb-2.justify-content-center
+          div.row.justify-content-center
             - @gone.images.each do |image|
-              div.col-lg-4.col-12.image_box.p-0
-                = image_tag image, class: 'border'
+              div.col-lg-6.col-12.image-field-inner
+                = image_tag image, class: 'border image'
                 = form_with model: @gone, local: true, class: 'text-left' do |f|
                   = f.hidden_field :image_id, :value => image.id
-                  = f.button :type => 'submit',  class: 'btn bg-transparent submit' do
+                  = f.button :type => 'submit',  class: 'btn bg-transparent submit cancel-btn' do
                     <i class="far fa-times-circle"></i>
-      div.name.card-item.fw-bold
+
+      div.card-item.fw-bold.name
         = @gone.name
-      div.address.card-item
+
+      div.card-item.address
         = @gone.address
-      div.opentime.card-item
-        | opentime: 
-        = @gone.opentime
-      div.holiday.card-item
-        | holiday: 
-        = @gone.holiday
-      div.budget.card-item
-        | 予算: ¥
-        = @gone.budget
-      div.card-item.text-left.row.comment_box
-        div.col-lg-3.col-3.text-right.p-0
-          | comment: 
-        div.col-lg-8.col-8.text-left.p-0
+
+      div.card-item.opentime
+        p 
+          | opentime: 
+          = @gone.opentime
+
+      div.card-item.holiday
+        p 
+          | holiday: 
+          = @gone.holiday
+
+      div.card-item.budget
+        p 
+          | 予算: ¥
+          = @gone.budget
+
+      div.card-item.text-left.row.comment_box.comment-field
+        div.col-lg-3.col-3.text-right.p-0.comment-label
+          p comment: 
+        div.col-lg-8.col-8.text-left.p-0.comment
           span 
             = @gone.comment
-      div.card-item.date.text-left.mb-2
+
+      div.card-item.text-left.mb-2.date
         = @gone.created_at.to_s(:datetime_jp)
-      div.row
-        div.col-lg-6.col-12.text-center
-          div.top_page.card-item
-            = link_to 'ぐるなびへ', @gone.url, target: :_blank, class: 'btn btn-light go_top_btn'
-        div.col-lg-6.col-12.text-center
-          div.delete.card-item
-            = link_to '削除', gone_path(@gone), method: :delete, class: 'btn btn-light delete_btn'
+
+      div.row.action
+        div.col-lg-6.col-6.text-center
+          div.card-item.top_page.top-page-field
+            = link_to 'ぐるなびへ', @gone.url, target: :_blank, class: 'btn btn-light go_top_btn go-top-btn'
+
+        div.col-lg-6.col-6.text-center
+          div.card-item.delete.delete-field
+            = link_to '削除', gone_path(@gone), method: :delete, class: 'btn btn-light delete_btn delete-btn'
 
 
-  div.col-lg-6.col-12.p-3.text-center.card.action_big_box
-
-    div.card-header.p-0.mb-2
-      | 行ったお店のコメント・写真の登録・変更ができます
+  div.col-lg-6.col-12.p-3.text-center.card.action-field
+    div.card-header
+      p 行ったお店のコメント・写真登録
     div.card-content
-      div.update_form_box.mb-2
+      div.mb-2.update_form_box.update-field
         = form_with model: @gone, local: true do |f|
           div.form-group.mb-2
-            = f.text_area :comment, :placeholder => "感想等を入力してください", value: @gone.comment , id: 'text_area', class: 'form-control update_form'
-          div.form-group.text-left.mb-2
-            = f.file_field :images, multiple: true, id: 'update_image', class: 'form-control-file update_file'
-          = f.submit "更新する", class: 'btn btn-light update_btn'
+            = f.text_area :comment, :placeholder => "感想等を入力してください", value: @gone.comment , id: 'text_area', class: 'form-control update_form update-form'
 
-    div.card-header.p-0.mb-2.mt-4
-      | 投稿用のキャプション・写真の登録・変更ができます
+          div.form-group.text-left.mb-2
+            = f.file_field :images, multiple: true, id: 'update_image', class: 'form-control-file update_file update-file'
+          = f.submit "更新する", class: 'btn btn-light update_btn update-btn'
+
+    div.card-header
+      p 投稿用のキャプション・写真登録
     div.card-content
-      div.post_form
+      div.post_form.post-form-field
         = form_with model: Posted.new, local: true do |f|
           = f.hidden_field :gone_id, value: @gone.id
+
           div.form-group.mb-2
-            = f.text_area :caption, :placeholder => "キャプション", value: @gone.comment, class: 'form-control to_post_form'
+            = f.text_area :caption, :placeholder => "キャプション", value: @gone.comment, class: 'form-control to_post_form post-form'
           div.form-group.text-left.mb-2
-            = f.file_field :images, multiple: true, id: 'post_image', class: 'form-control-file to_post_file'
-          = f.submit "投稿する", class: 'btn btn-light to_post_btn'
+            = f.file_field :images, multiple: true, id: 'post_image', class: 'form-control-file to_post_file post-file'
+
+          = f.submit "投稿する", class: 'btn btn-light to_post_btn post-btn'

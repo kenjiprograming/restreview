@@ -1,175 +1,306 @@
-@media screen and (max-width: 767px) {
-  
-  #user-show {
-    .info_big_box {
-      margin-bottom: 15px;
-    }
-    .info_name, .info_btn_box {
-      text-align: center !important;
-    }
-
-    .search_btn, .follows_btn, .follow-unfollow-btn {
-      width: 40%;
-      border: gray 1px solid;
-      margin-bottom: 15px;
-      font-size: 13px;
-      color: gray;
-    }
-
-
-    .follow-box {
-      margin: 0 auto;
-    }
-    a {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
-      }
-    }
-    .address, .btn {
-      font-size: 12px;
-      margin-bottom: 5px;
-    }
-    .caption {
-      font-size: 13px;
-      margin-bottom: 7px;
-      span {
-        // font-weight: bold;
-      }
-    }
-    .btn {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
-      }
-    }
-  }
-
-  
+// @media screen and (max-width: 768px) {
+/////////////////////////////////////////////////
   #user-index {
-    .search_form_box {
-      max-height: 200px;
-      min-height: 200px;
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    p {
       margin: 0;
-      margin-bottom: 15px;
+      padding: 0;
     }
-    .search_field {
-      width: 90%;
-      margin-bottom: 15px;
-    }
-    .search_submit_btn {
-      width: 40%;
-      border: gray 1px solid;
-      margin-bottom: 15px;
-      font-size: 13px;
-      color: gray;
-    }
-    .btn {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
+    .search-area {
+      .title-space {
+        margin-bottom: 2rem !important;
+        .title {
+          font-size: 1rem;
+        }
       }
-    }
-    a {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
-      }
-    }
-    .email_box {
-      margin: 0 auto;
-      width: 100% !important;
-      margin-bottom: 20px !important;
-      height: 40px;
-
-      .email_consequences {
-        margin: auto 0;
-        
-        .email {
-          font-size: 17px;
+      .search-field {
+        .search-space {
+          .label {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+          }
+          .search-space-inner {
+            .search-form {
+              height: 40px;
+              width: 200px;
+              font-size: 1rem;
+              margin-right: 2rem !important;
+            }
+            .search-btn {
+              margin: 0 !important;
+              font-size: 0.8rem;
+            }
+          }
         }
       }
     }
-    .user_search {
-      outline: none;
+    .hit-area {
+      .title-space {
+        margin-bottom: 2rem;
+        .title {
+          font-size: 1rem;
+        }
+      }
+      .hit-field {
+        .hit-space {
+          margin: auto;
+          margin-bottom: 1rem ;
+          .email-btn {
+            font-size: 1rem;
+            margin: 0 !important;
+            padding: 0.5rem 0;
+          }
+        }
+      }
     }
   }
-}
 
-
-
-
-
-
-
-@media screen and (min-width: 768px) {
-  
+/////////////////////////////////////////////////
   #user-show {
-    .follow-box {
-      margin: 0 auto;
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
-    a {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
+    p {
+      margin: 0 !important;
+    }
+    .follows-field {
+      margin-bottom: 2rem;
+      .email-space {
+        .email {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+      }
+      .action-space {
+        .search-btn {
+          margin: 0;
+          margin-right: 2rem;
+          border: none;
+          font-size: 0.8rem;
+        }
+        .follows-btn {
+          margin: 0 !important;
+          border: none;
+          font-size: 0.8rem;
+        }
+        .action-space-inner {
+          .unfollow-btn {
+            font-size: 0.8rem;
+          }
+          .follow-btn {
+            font-size: 0.8rem;
+          }
+        }
       }
     }
-    .address, .btn {
-      font-size: 12px;
-      margin-bottom: 5px;
-    }
-    .caption {
-      font-size: 13px;
-      margin-bottom: 7px;
-      span {
-        // font-weight: bold;
-      }
-    }
-    .btn {
-      color: gray;
-      text-decoration: none;
-      &:hover {
-        color: black;
+    .inform-area {
+      .want-field, 
+      .gone-field,
+      .post-field,
+      .like-field {
+        padding: 0;
+        .title-space {
+          margin-bottom: 0.5rem;
+          .title {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+          }
+        }
+        .field-inner {
+          margin-bottom: 0.5rem;
+          .name-space {
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+            height: 40px;
+            .name {
+              font-size: 0.8rem;
+            }
+          }
+          .address-space {
+            margin-bottom: 1rem;
+            height: 40px;
+            .address {
+              font-size: 0.8rem;
+            }
+          }
+          .capcom-space {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            p {
+              display: inline-block;
+            }
+            .ttl {
+              margin-right: 5px;
+            }
+            .capcom {
+
+            }
+          }
+        }
       }
     }
   }
-  
+// }
+
+/////////////////////////////////////////////////
+//スマホ用レイアウト////////////////////////////
+@media screen and (max-width: 767px) {
+
+  // ユーザー一覧
   #user-index {
-    .search_form_box {
-      max-height: 200px;
-      min-height: 200px;
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
     }
-    .search_form {
-      margin: auto;
-    }
-    .btn {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
+    .search-area {
+      .title-space {
+        margin-bottom: 2rem !important;
+        .title {
+          font-size: 1rem;
+          margin: 0 !important;
+        }
+      }
+      .search-field {
+        .search-space {
+          .label {
+            font-size: 1rem;
+            margin-bottom: 1rem !important;
+          }
+          .search-space-inner {
+            margin-bottom: 1rem;
+            .search-form {
+              height: 40px;
+              width: 200px;
+              font-size: 1rem;
+              margin-right: 1rem !important;
+            }
+            .search-btn {
+              margin: 0 !important;
+            }
+          }
+        }
       }
     }
-    a {
-      color: gray;
-      text-decoration: none;
-      font-size: 13px;
-      &:hover {
-        color: black;
+
+    .hit-area {
+      .title-space {
+        margin-bottom: 1rem !important;
+        .title {
+          font-size: 1rem;
+          margin: 0 !important;
+        }
+      }
+      .hit-field {
+        .hit-space {
+          margin: auto;
+          margin-bottom: 1rem !important;
+          .email-btn {
+            font-size: 1rem;
+            margin: 0 !important;
+            padding: 0.5rem 0;
+          }
+        }
+      }
+
+    }
+  }
+
+/////////////////////////////////////////////////
+  #user-show {
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin: 0 !important;
+    }
+    .follows-field {
+      margin-bottom: 2rem;
+      .email-space {
+        text-align: center !important;
+        margin-bottom: 1rem;
+        .email {
+          font-size: 1rem;
+        }
+      }
+      .action-space {
+        text-align: center !important;
+        .search-btn {
+          margin: 0 1rem !important;
+          border: none;
+        }
+        .follows-btn {
+          margin: 0 1rem !important;
+          border: none;
+        }
+        .action-space-inner {
+          .unfollow-btn {
+          }
+          .follow-btn {
+          }
+        }
       }
     }
-    .email_box {
-      margin: 0 auto;
-    }
-    .user_search {
-      outline: none;
+    .inform-area {
+      .want-field, 
+      .gone-field,
+      .post-field,
+      .like-field {
+        .title-space {
+          margin-bottom: 0.5rem !important;
+          .title {
+            margin-top: 0.5rem !important;
+            font-size: 1.5rem;
+            font-weight: normal !important;
+          }
+        }
+        .field-inner {
+          margin-bottom: 0.5rem;
+          .name-space {
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+            .name {
+              font-size: 1rem;
+            }
+          }
+          .address-space {
+            margin-bottom: 1rem;
+            .address {
+              font-size: 1rem;
+            }
+          }
+          .capcom-space {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 0.5rem !important;
+            p {
+              display: inline-block;
+            }
+            .ttl {
+              margin-right: 5px !important;
+            }
+            .capcom {
+
+            }
+          }
+        }
+      }
+      .like-field {
+        .image-space {
+          .image-space-inner {
+            .image {
+
+            }
+          }
+        }
+      }
     }
   }
 }

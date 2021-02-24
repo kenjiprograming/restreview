@@ -1,73 +1,84 @@
 h3.mb-3
-  | 行きたいお店一覧
+  p 行きたいお店一覧
 
-.row.mb-3.justify-content-center.list_form
-  .col-lg-4.col-xs-5.text-right.list_click
-    button.list_btn.mb-3.btn.btn-light listnameで検索する
-  .col-lg-4.col-xs-5.text-left.list_click_consequence
-    #list_form.mb-3.listname_form_box
+div.row.mb-3.justify-content-center.search-field
+  div.col-lg-4.col-6.text-right.search-base-btn-space
+    button.btn.btn-light.search-base-btn#list_btn listnameで検索する
+    
+  div.col-lg-4.col-6.text-left.search-space
+    #list_form.mb-3.search-space-inner
       = search_form_for @q, url: wants_path do |f|
-        =f.search_field :listname_cont, class: 'form-control-sm mr-2 listname_form'
-        =f.submit "検索", class: 'listname_form_btn btn btn-light m-0'
+        =f.search_field :listname_cont, class: 'form-control-sm search-form'
+        =f.submit "検索", class: 'btn btn-light search-btn'
 
 
 - if params[:q]
-  .row.justify-content-left
+  div.row.justify-content-left.want-field
     - @wants.each do |want|
-      .card.col-lg-4.col-xs-12.p-1
-        .card-content
-          p.card-header.name.fw-bold
-            = want.name
-          p.card-text.address.text-left.mt-1.p-1
-            = want.address
-          p.card-text.caption.text-left.p-1
-            | caption: 
-            = want.caption
-          p.card-text.listname.text-left.p-1
-            | listname:  
-            = want.listname
-          p.card-text.date.text-left.p-1
-            = want.created_at.to_s(:datetime_jp)
+      div.card.col-lg-4.col-12.p-2
+        div.card-content
+          div.card-header.fw-bold.name-space
+            p.name = want.name
 
-          div.card-link.mt-4.p-2.row
-            .col-lg-4.col-xs-12.p-0
-              = link_to '詳細', want_path(want), class: 'detail_btn text-center btn btn-light'
+          div.card-text.text-left.address-space
+            p.address = want.address
 
-            .col-lg-4.col-xs-12.p-0  
+          div.card-text.text-left.capcom-space
+            p.ttl caption: 
+            p.capcom = want.caption
+
+          div.card-text.text-left.listname-space
+            p.ttl listname:  
+            p.listname = want.listname
+
+          div.card-text.text-left.date-space
+            p.date = want.created_at.to_s(:datetime_jp)
+
+          div.card-link.row
+            div.col-lg-4.col-12.detail-space
+              = link_to '詳細', want_path(want), class: 'text-center btn btn-light detail-btn'
+
+            div.col-lg-4.col-12.gone-space
               - gone = Gone.where(name: want.name, user_id: current_user.id).first
               -if gone.present?
-                = link_to 'もう行った!', gone_path(id: gone.id), method: :delete, class: 'to_no_go_btn text-center btn btn-light'
+                = link_to 'もう行った!', gone_path(id: gone.id), method: :delete, class: 'text-center btn btn-light to-no-go-btn'
               -else
-                = link_to '行った!にする', gones_path(want_id: want.id), method: :post, class: 'to_go_btn text-center btn btn-light'
+                = link_to '行った!にする', gones_path(want_id: want.id), method: :post, class: 'text-center btn btn-light to-go-btn'
 
-            .col-lg-4.col-xs-12.p-0
-              = link_to '削除', want_path(want), method: :delete, class: 'btn btn-light delete_bnt'
+            div.col-lg-4.col-12.delete-space
+              = link_to '削除', want_path(want), method: :delete, class: 'btn btn-light delete-btn'
 
 - else 
-  .row.justify-content-left
+  div.row.justify-content-left.want-field
     - @wants.each do |want|
-      .card.col-lg-4.col-xs-12.p-1
-        .card-content
-          p.card-header.name.fw-bold
-            = want.name
-          p.card-text.address.text-left.mt-1.p-1
-            = want.address
-          p.card-text.caption.text-left.p-1
-            | caption: 
-            = want.caption
-          p.card-text.listname.text-left.p-1
-            | listname:  
-            = want.listname
-          p.card-text.date.text-left.p-1
-            = want.created_at.to_s(:datetime_jp)
-          div.card-link.mt-4.p-2.row
-            .col-lg-4.col-xs-12.p-0
-              = link_to '詳細', want_path(want), class: 'detail_btn text-center btn btn-light'
-            .col-lg-4.col-xs-12.p-0  
+      div.card.col-lg-4.col-12.p-2
+        div.card-content
+          div.card-header.fw-bold.name-space
+            p.name = want.name
+
+          div.card-text.text-left.address-space
+            p.address = want.address
+
+          div.card-text.text-left.capcom-space
+            p.ttl caption: 
+            p.caption = want.caption
+
+          div.card-text.text-left.listname-space
+            p.ttl listname:  
+            p.listname = want.listname
+
+          div.card-text.text-left.date-space
+            p.date = want.created_at.to_s(:datetime_jp)
+
+          div.card-link.row.action-field
+            div.col-lg-4.col-4.detail-space
+              = link_to '詳細', want_path(want), class: 'text-center btn btn-light detail-btn'
+
+            div.col-lg-4.col-4.gone-space
               - gone = Gone.where(name: want.name, user_id: current_user.id).first
               -if gone.present?
-                = link_to 'もう行った!', gone_path(id: gone.id), method: :delete, class: 'to_no_go_btn text-center btn btn-light'
+                = link_to 'もう行った!', gone_path(id: gone.id), method: :delete, class: 'text-center btn btn-light to-no-go-btn'
               -else
-                = link_to '行った!にする', gones_path(want_id: want.id), method: :post, class: 'to_go_btn text-center btn btn-light'
-            .col-lg-4.col-xs-12.p-0
-              = link_to '削除', want_path(want), method: :delete, class: 'btn btn-light delete_btn'
+                = link_to '行った!にする', gones_path(want_id: want.id), method: :post, class: 'text-center btn btn-light to-go-btn'
+            div.col-lg-4.col-4.delete-space
+              = link_to '削除', want_path(want), method: :delete, class: 'btn btn-light delete-btn'

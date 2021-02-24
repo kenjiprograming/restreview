@@ -1,35 +1,38 @@
-h3.mb-5
-  | お店検索画面
-.row
-  .card.col-lg-6.col-xs-12.p-3.text-center.search_form_box
-    .card-header.p-0.mb-2
-      | お店検索をしてください
-    .card-content.search_form
-      = form_with url: "/gurunabi/search", method: :get, local: true do |f|
-        .form-group.mb-2.text-left
-          .row.align
-            .col-lg-10.col-xs-12
-              = f.label :name, "お店の名前を入れてください", class: 'label mb-2'
-              = f.text_field :name, :placeholder => "スターバックス", id: 'text_field', class: 'form-control mb-2 rest_name'
-              = f.label :freeword, "お店の場所を入れてください", class: 'label mb-2'
-              = f.text_field :freeword, :placeholder => "新宿", id: 'text_field', class: 'form-control rest_freeword'
-            .col-lg-2.col-xs-12.guru_submit
-              = f.submit "検索", class: 'btn btn-light submit'
+h3
+   p お店検索画面
+div.row
+   div.card.col-lg-6.col-12.p-3.text-center.search-form-field
 
+      div.card-header
+         p お店検索をしてください
 
-  .card.col-lg-6.col-xs-12.p-3.text-center.search_hits
-    .card-header.p-0.mb-2
-      | 検索結果が表示されます
-    .card-content
-      / - binding.pry
-      - if @restaurants
-        - @restaurants.each do |rest|
-          .card.mb-1.rest_box
-            #rest.card-content
-              .card-item
-                = link_to rest.name, "/gurunabi/#{rest.id}/show", class: 'rest-link'
-              .card-item.address
-                = rest.address
-      - if @restaurant
-        | 検索結果はここに表示されます。できるだけフルネームで入れましょう。
+      div.card-content
+         = form_with url: "/gurunabi/search", method: :get, local: true do |f|
+            div.form-group.text-left
+               div.row.align
+                  div.col-lg-12.col-12
+                     = f.label :name, "お店の名前を入れてください", class: 'label'
+                     = f.text_field :name, :placeholder => "スターバックス", id: 'text_field', class: 'form-control name-form'
+
+                     = f.label :freeword, "お店の場所を入れてください", class: 'label'
+                     = f.text_field :freeword, :placeholder => "新宿", id: 'text_field', class: 'form-control freeword-form'
+
+                  div.col-lg-12.col-12.guru_submit.search-btn-field
+                     = f.submit "検索", class: 'btn btn-light search-btn'
+
+   div.card.col-lg-6.col-12.p-2.text-center.search-hits-field
+      div.card-header
+         p 検索結果が表示されます
+      div.card-content
+         / - binding.pry
+         - if @restaurants
+            - @restaurants.each do |rest|
+               div.card.mb-1.rest-field
+                  #rest.card-content.card-content-2
+                     div.card-item.name-space
+                        = link_to rest.name, "/gurunabi/#{rest.id}/show", class: 'name'
+                     div.card-item.address
+                        = rest.address
+            - if @restaurant
+            / p 検索結果はここに表示されます。できるだけフルネームで入れましょう。
 

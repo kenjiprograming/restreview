@@ -1,35 +1,39 @@
 h3.mb-3
-  | 投稿一覧画面
+  p 投稿一覧画面
 - if @posteds.first.nil?
-  | 投稿がまだありません  
-.row.justify-content-center
+  p 投稿がまだありません  
+div.row.justify-content-center
   - @posteds.each do |post|
-    .col-lg-5.col-xs-12.posted-box
+    div.col-lg-5.col-12
       div.card.mb-2
         div.card-header.bg-white.text-left.email
-            = link_to post.user.email, user_path(post.user), class: 'fs-6 fw-light', id: 'user_email'
-        - if post.images.attached?
-          =link_to posted_path(post) do
-            = image_tag post.images.first, class: "card-img-top image p-2"
-          end
-        div.card-body.pt-0
-          p.card-title.fs-5.text-left.title.mb-2
-            = link_to post.name, posted_path(post), id: 'post_name'
-          p.card-text.text-left.caption
-            span #{post.user.email}
-            |  #{post.caption} 
-          p.card-text.heart.text-left
-            | ♡
-            = post.likes.length
-          div.row
-            .card-text.col-2.text-left
+            = link_to post.user.email, user_path(post.user), class: 'fs-6 fw-light email', id: 'user_email '
+        div.image-space
+          - if post.images.attached?
+            =link_to posted_path(post), class: 'image-space-inner' do
+              = image_tag post.images.first, class: "card-img-top image"
+            end
+
+        div.card-body
+          div.card-title.text-left.title-field
+            = link_to post.name, posted_path(post), id: 'title', class: 'title'
+          div.card-text.text-left.caption-field
+            span #{ post.user.email }
+            p #{ post.caption } 
+                
+          div.card-text.text-left.heart-field
+            p.heart  <i class="far fa-heart"></i>
+            p.length  = post.likes.length
+            
+          div.row.row-field
+            div.card-text.col-2.text-left.left-space
               - if current_user.likes.find_by(posted_id: post.id)
-                = link_to posted_like_path(posted_id: post.id, id: current_user.id), method: :delete, class: 'like unlike' do
+                = link_to posted_like_path(posted_id: post.id, id: current_user.id), method: :delete, class: 'unlike-btn' do
                   <i class="fas fa-heart"></i>
                 end
               - else
-                = link_to posted_likes_path(post), method: :post, class: 'like ' do
+                = link_to posted_likes_path(post), method: :post, class: 'like-btn' do
                   <i class="far fa-heart"></i>
                 end
-            .card-text.date.col-10.text-right
-              = post.created_at.to_s(:datetime_jp)
+            div.card-text.col-10.text-right.right-space
+              p.date = post.created_at.to_s(:datetime_jp)
