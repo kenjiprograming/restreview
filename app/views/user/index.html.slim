@@ -9,19 +9,18 @@ div.row
          = search_form_for @q, url: user_index_path do |f|
             div.form-group.search-space
                = f.label :email, "emailを入力してください（最低1文字）", class: 'label'
-               br
                div.search-space-inner
                   = f.search_field :email_cont, id: "form_controll", class: 'form-control-sm search-form'
-                  = f.submit "検索", id: "submit", class: 'btn btn-light search-btn'
+                  = f.submit "検索", id: "search_btn", class: 'btn btn-light search-btn'
 
 
    div.card.col-lg-6.col-12.text-center.hit-area
       div.card-header.title-space
          p.title 検索結果が表示されます
-      div.card-content.hit-field
+      div.card-content.hit-field#email
          - if params[:q]
-         - @users.each do |user|
-            div.card.hit-space
-               #user.card-content.email_consequences
-               = link_to user.email, user_path(user), class: 'email-btn'
+            - @users.each do |user|
+               div.card.hit-space
+                  #user.card-content.email_consequences
+                  = link_to user.email, user_path(user), class: 'email-btn'
 
