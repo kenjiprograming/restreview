@@ -127,7 +127,7 @@
 
 //////////////////////////////////////////////////////////////////////////
 // スマホ用レイアウト/////////////////////////////////////////////////////
-@media screen and (max-width: 766px) {
+@media screen and (max-width: 767px) {
 
   #gurunabi-search {
     h3 {
@@ -167,7 +167,7 @@
             .search-btn {
               width: 40%;
               margin-bottom: 1rem ;
-              font-size: 1.4rem;
+              font-size: 0.8rem;
               color: gray;
             }
           }
@@ -186,7 +186,6 @@
       .card-content {
         .rest-field {
           margin-bottom: 1rem !important;
-
           .card-content-2 {
             .name-space {
               height: 50px;
@@ -220,7 +219,6 @@
         }
       }
       .card-content {
-
         .card-item {
           font-size: 1rem;
           margin-bottom: 1rem ;
@@ -230,7 +228,7 @@
     .action-field {
       .card-header {
         font-size: 1rem;
-        margin-bottom: 30px !important;
+        margin-bottom: 2rem !important;
 
         p {
           margin-top: 1rem;
@@ -239,20 +237,20 @@
       .card-content {
         .form-group {
           .caption-form {
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
             height: 100px;
             width: 100%;
             font-size: 1rem;
           }
           .list-name-form {
-            margin-bottom: 30px;
+            margin-bottom: 2rem;
             width: 100%;
             font-size: 1rem;
           }
         }
         .add-list-btn {
-          width: 40%;
-          font-size: 1.4rem;
+          width: 200px;
+          font-size: 0.8rem;
           color: gray;
           margin-bottom: 0 !important;
         }
