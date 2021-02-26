@@ -88,13 +88,10 @@
           border: none;
           font-size: 0.8rem;
         }
-        .action-space-inner {
-          .unfollow-btn {
-            font-size: 0.8rem;
-          }
-          .follow-btn {
-            font-size: 0.8rem;
-          }
+        .unfollow-btn, .follow-btn  {
+          font-size: 0.8rem;
+          color: white !important;
+          margin-left: 2rem;
         }
       }
     }

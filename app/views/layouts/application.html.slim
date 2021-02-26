@@ -6,9 +6,9 @@ html
       | RestReview
     = csrf_meta_tags
     = csp_meta_tag
-    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" 
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" 
 
 
   body id="#{controller.controller_name}-#{controller.action_name}"

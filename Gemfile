@@ -73,6 +73,5 @@ gem 'ransack'
 
 gem 'bootstrap', '~> 5.0.0.alpha3'
 gem 'jquery-rails'
-gem 'font-awesome-sass'
-
+gem 'font-awesome-sass', '~> 5.4.1'
 gem 'slim-rails'
