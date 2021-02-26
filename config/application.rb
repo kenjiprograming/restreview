@@ -19,5 +19,6 @@ module Myapp
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
     config.generators.template_engine = :slim
+    config.assets.precompile << %w( *.scss *.js )
   end
 end
