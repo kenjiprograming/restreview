@@ -26,6 +26,8 @@
           width: auto;
           max-height: 400px;
           max-width: 100%;
+          min-height: 400px;
+          min-width: 100%;
         }
       }
     }
@@ -178,7 +180,7 @@
         .beliked-space-inner {
           .inner-inner {
             text-align: center !important;
-            margin: 1rem;
+            margin: 1rem 0;
             .email-btn {
               font-size: 1rem;
             }
