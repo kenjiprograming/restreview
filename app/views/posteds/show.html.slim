@@ -43,12 +43,12 @@ div.row.justify-content-center
               p.date = @posted.created_at.to_s(:datetime_jp)
 
             - if current_user == @posted.user
-            div.card-text.col-lg-9.col-12.text-right.delete-space
-                = link_to "投稿を削除する", posted_path(@posted), method: :delete, class: 'btn btn-light delete-btn'
+              div.card-text.col-lg-9.col-12.text-right.delete-space
+                  = link_to "投稿を削除する", posted_path(@posted), method: :delete, class: 'btn btn-light delete-btn'
 
             div.card-text.beliked-space
               p.border-bottom.title されたいいね一覧
-              - @likes.each do |like|
-                div.row.beliked-space-inner
+              div.row.beliked-space-inner
+                - @likes.each do |like|
                   div.col-lg-6.col-12.text-left.inner-inner
                     = link_to like.user.email, user_path(like.user_id), class: 'email-btn'
